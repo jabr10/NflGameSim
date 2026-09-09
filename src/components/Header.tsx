@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 
 export function Header({ authEnabled }: { authEnabled: boolean }) {
   return (
@@ -22,16 +22,16 @@ export function Header({ authEnabled }: { authEnabled: boolean }) {
           </Link>
           {authEnabled ? (
             <>
-              <SignedIn>
+              <Show when="signed-in">
                 <UserButton />
-              </SignedIn>
-              <SignedOut>
+              </Show>
+              <Show when="signed-out">
                 <SignInButton mode="redirect">
                   <button className="rounded-md bg-emerald-500 px-3 py-1.5 text-sm font-medium text-slate-950 hover:bg-emerald-400">
                     Sign in
                   </button>
                 </SignInButton>
-              </SignedOut>
+              </Show>
             </>
           ) : null}
         </nav>
