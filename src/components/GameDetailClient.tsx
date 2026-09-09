@@ -84,6 +84,31 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         <p className="text-xs text-slate-500">Status: {sim.status}</p>
       </header>
 
+      {sim.footage_refs.length > 0 ? (
+        <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            Footage refs
+          </h2>
+          <ul className="mt-3 space-y-2">
+            {sim.footage_refs.map((ref) => (
+              <li key={`${ref.player_id}-${ref.kind}`} className="text-sm text-slate-300">
+                <span
+                  className={`mr-2 rounded px-1.5 py-0.5 text-[11px] uppercase ${
+                    ref.kind === "elevate"
+                      ? "bg-emerald-500/15 text-emerald-300"
+                      : "bg-amber-500/15 text-amber-300"
+                  }`}
+                >
+                  {ref.kind}
+                  {ref.status ? ` · ${ref.status}` : ""}
+                </span>
+                {ref.player_name} ({ref.team} {ref.pos}) — {ref.label}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
           Model leans
@@ -225,33 +250,6 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         <p className="text-sm text-slate-400">
           Score {formatNum(sim.confidence.score, 2)} · {sim.confidence.note}
         </p>
-      </section>
-
-      <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
-          Footage refs
-        </h2>
-        {sim.footage_refs.length === 0 ? (
-          <p className="mt-2 text-sm text-slate-500">None for this game.</p>
-        ) : (
-          <ul className="mt-3 space-y-2">
-            {sim.footage_refs.map((ref) => (
-              <li key={`${ref.player_id}-${ref.kind}`} className="text-sm text-slate-300">
-                <span
-                  className={`mr-2 rounded px-1.5 py-0.5 text-[11px] uppercase ${
-                    ref.kind === "elevate"
-                      ? "bg-emerald-500/15 text-emerald-300"
-                      : "bg-amber-500/15 text-amber-300"
-                  }`}
-                >
-                  {ref.kind}
-                  {ref.status ? ` · ${ref.status}` : ""}
-                </span>
-                {ref.player_name} ({ref.team} {ref.pos}) — {ref.label}
-              </li>
-            ))}
-          </ul>
-        )}
       </section>
     </div>
   );
