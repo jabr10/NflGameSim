@@ -7,10 +7,12 @@ export function GameCard({
   game,
   homeWinProb,
   awayWinProb,
+  confidenceLabel,
 }: {
   game: SlateGame;
   homeWinProb?: number;
   awayWinProb?: number;
+  confidenceLabel?: string;
 }) {
   const away = teamMeta(game.away);
   const home = teamMeta(game.home);
@@ -31,9 +33,16 @@ export function GameCard({
             {away.name} at {home.name}
           </p>
         </div>
-        <span className="rounded-full bg-white/5 px-2 py-0.5 text-[11px] uppercase tracking-wide text-slate-400">
-          {game.status}
-        </span>
+        <div className="flex flex-col items-end gap-1">
+          <span className="rounded-full bg-white/5 px-2 py-0.5 text-[11px] uppercase tracking-wide text-slate-400">
+            {game.status}
+          </span>
+          {confidenceLabel ? (
+            <span className="rounded-full bg-amber-400/15 px-2 py-0.5 text-[11px] uppercase tracking-wide text-amber-200">
+              conf {confidenceLabel}
+            </span>
+          ) : null}
+        </div>
       </div>
       <p className="mt-3 text-sm text-slate-300">{formatKickoff(game.kickoff)}</p>
       <p className="mt-1 text-xs text-slate-500">
