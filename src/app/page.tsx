@@ -14,6 +14,7 @@ export default function WeekBoardPage() {
       {
         home: g.market_leans.home_win_prob,
         away: g.market_leans.away_win_prob,
+        confidence: g.confidence.label,
       },
     ]),
   );
@@ -40,6 +41,7 @@ export default function WeekBoardPage() {
             game={game}
             homeWinProb={leansById[game.game_id]?.home}
             awayWinProb={leansById[game.game_id]?.away}
+            confidenceLabel={leansById[game.game_id]?.confidence}
           />
         ))}
       </section>

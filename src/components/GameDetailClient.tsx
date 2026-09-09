@@ -3,8 +3,9 @@
 import { useMemo, useState } from "react";
 import { TypedLineInput } from "@/components/TypedLineInput";
 import { formatKickoff, formatNum, formatPct, formatSigned, formatWeather, propLabel } from "@/lib/format";
+import { confidenceBand, normalizeSimResult } from "@/lib/normalize";
 import { marginQuantiles, totalQuantiles } from "@/lib/prob-over";
-import type { InjuryToggle, PlayerToggle, SimResult, UsageToggle } from "@/lib/types";
+import type { Confidence, InjuryToggle, PlayerToggle, SimResult, UsageToggle } from "@/lib/types";
 
 const INJURY_OPTIONS: InjuryToggle[] = ["active", "questionable", "out"];
 const USAGE_OPTIONS: UsageToggle[] = ["base", "up", "down"];
@@ -52,7 +53,7 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         const body = (await res.json().catch(() => ({}))) as { error?: string };
         throw new Error(body.error || `Re-sim failed (${res.status})`);
       }
-      const next = (await res.json()) as SimResult;
+      const next = normalizeSimResult(await res.json());
       setSim(next);
       setNotice("Stub sim returned the same fixture. Toggles were sent but not applied.");
     } catch (err) {
@@ -84,13 +85,15 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         <p className="text-xs text-slate-500">Status: {sim.status}</p>
       </header>
 
-      {sim.footage_refs.length > 0 ? (
+      <ConfidenceBandCard confidence={sim.confidence} />
+
+      {(sim.footage_refs ?? []).length > 0 ? (
         <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
             Footage refs
           </h2>
           <ul className="mt-3 space-y-2">
-            {sim.footage_refs.map((ref) => (
+            {(sim.footage_refs ?? []).map((ref) => (
               <li key={`${ref.player_id}-${ref.kind}`} className="text-sm text-slate-300">
                 <span
                   className={`mr-2 rounded px-1.5 py-0.5 text-[11px] uppercase ${
@@ -241,17 +244,61 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
           ))}
         </ul>
       </section>
-
-      <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
-          Confidence
-        </h2>
-        <p className="mt-2 text-lg font-semibold capitalize text-white">{sim.confidence.label}</p>
-        <p className="text-sm text-slate-400">
-          Score {formatNum(sim.confidence.score, 2)} · {sim.confidence.note}
-        </p>
-      </section>
     </div>
+  );
+}
+
+const BAND_SEGMENTS: Array<{ key: Confidence["band"]; label: string }> = [
+  { key: "low", label: "Low" },
+  { key: "medium", label: "Medium" },
+  { key: "high", label: "High" },
+];
+
+function ConfidenceBandCard({ confidence }: { confidence: Confidence }) {
+  const active = confidence.band ?? confidenceBand(confidence.label);
+  return (
+    <section className="rounded-xl border border-amber-400/30 bg-[#121a2b] p-4">
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+        Confidence band
+      </h2>
+      <p className="mt-2 text-lg font-semibold capitalize text-white">{confidence.label}</p>
+      <p className="text-sm text-slate-400">
+        Score {formatNum(confidence.score, 2)}
+        {confidence.note ? ` · ${confidence.note}` : ""}
+      </p>
+      <div className="mt-3 grid grid-cols-3 gap-1">
+        {BAND_SEGMENTS.map((seg) => {
+          const on = seg.key === active;
+          const tone =
+            seg.key === "low"
+              ? on
+                ? "bg-amber-400 text-slate-950"
+                : "bg-amber-400/15 text-amber-200/70"
+              : seg.key === "medium"
+                ? on
+                  ? "bg-sky-400 text-slate-950"
+                  : "bg-white/5 text-slate-500"
+                : on
+                  ? "bg-emerald-400 text-slate-950"
+                  : "bg-white/5 text-slate-500";
+          return (
+            <div
+              key={seg.key}
+              className={`rounded-md px-2 py-1.5 text-center text-[11px] font-semibold uppercase tracking-wide ${tone}`}
+            >
+              {seg.label}
+            </div>
+          );
+        })}
+      </div>
+      {(confidence.reasons ?? []).length > 0 ? (
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-300">
+          {(confidence.reasons ?? []).map((reason) => (
+            <li key={reason}>{reason}</li>
+          ))}
+        </ul>
+      ) : null}
+    </section>
   );
 }
 
