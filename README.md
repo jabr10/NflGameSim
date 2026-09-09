@@ -34,7 +34,7 @@ Optional (already in the example):
 - `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in`
 - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
 
-Create a Clerk application and paste the keys. Middleware (`src/middleware.ts`) protects every route except sign-in and sign-up.
+Create a Clerk application and paste the keys. Middleware (`src/middleware.ts`) protects every route except sign-in and sign-up once real keys are set. Placeholder keys are only so `next build` can compile; they do not turn auth on.
 
 ## Fixtures
 
