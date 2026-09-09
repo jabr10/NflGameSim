@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_SF_LA",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-10T20:35:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "SoFi Stadium",
+    "city": "Inglewood",
+    "state": "CA",
+    "indoor": true
+  },
+  "weather": {
+    "temp_f": 72,
+    "wind_mph": 0,
+    "condition": "Indoor — climate controlled",
+    "precip_pct": 0
+  },
+  "teams": {
+    "away": {
+      "abbr": "SF",
+      "name": "San Francisco 49ers"
+    },
+    "home": {
+      "abbr": "LA",
+      "name": "Los Angeles Rams"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.49,
+    "away_win_prob": 0.51,
+    "proj_margin_home": -0.4,
+    "proj_total": 46.8,
+    "margin_p10": -11.9,
+    "margin_p90": 11.1,
+    "total_p10": 37.3,
+    "total_p90": 56.3,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 23.6,
+      "pass_yards": 262,
+      "rush_yards": 108,
+      "pass_attempts": 32,
+      "rush_attempts": 24,
+      "sacks_taken": 2.3,
+      "turnovers": 0.6
+    },
+    "home": {
+      "points": 23.2,
+      "pass_yards": 268,
+      "rush_yards": 110,
+      "pass_attempts": 34,
+      "rush_attempts": 28,
+      "sacks_taken": 1.8,
+      "turnovers": 0.5
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-919444",
+      "name": "Brock Purdy",
+      "team": "SF",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.12,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 262,
+          "p10": 188.1,
+          "p50": 262,
+          "p90": 335.9
+        },
+        "pass_tds": {
+          "mean": 1.8,
+          "p10": 0.8,
+          "p50": 1.8,
+          "p90": 2.8
+        },
+        "pass_atts": {
+          "mean": 32,
+          "p10": 27.1,
+          "p50": 32,
+          "p90": 36.9
+        },
+        "completions": {
+          "mean": 21.8,
+          "p10": 17.9,
+          "p50": 21.8,
+          "p90": 25.7
+        },
+        "interceptions": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 14,
+          "p10": 6.8,
+          "p50": 14,
+          "p90": 21.2
+        }
+      },
+      "fantasy": {
+        "mean": 18.8,
+        "p10": 9.8,
+        "p90": 27.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.117
+    },
+    {
+      "player_id": "00-728040",
+      "name": "Christian McCaffrey",
+      "team": "SF",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0.58,
+        "target_share": 0.19,
+        "route_share": 0.23
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "rush_atts": {
+          "mean": 15,
+          "p10": 11.5,
+          "p50": 15,
+          "p90": 18.5
+        },
+        "rec_yds": {
+          "mean": 42,
+          "p10": 20.5,
+          "p50": 42,
+          "p90": 63.5
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 2.9,
+          "p50": 5.2,
+          "p90": 7.5
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 18.4,
+        "p10": 9.6,
+        "p90": 27.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.508
+    },
+    {
+      "player_id": "00-698941",
+      "name": "Isaac Guerendo",
+      "team": "SF",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.22,
+        "rush_share": 0.19,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 22,
+          "p10": 13,
+          "p50": 22,
+          "p90": 31
+        },
+        "rush_atts": {
+          "mean": 5,
+          "p10": 3.8,
+          "p50": 5,
+          "p90": 6.2
+        },
+        "rec_yds": {
+          "mean": 6,
+          "p10": 2.9,
+          "p50": 6,
+          "p90": 9.1
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4,
+        "p10": 2.1,
+        "p90": 5.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.18
+    },
+    {
+      "player_id": "00-053039",
+      "name": "Ricky Pearsall",
+      "team": "SF",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.22,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 5.1,
+          "p10": 3.3,
+          "p50": 5.1,
+          "p90": 6.9
+        },
+        "targets": {
+          "mean": 7.6,
+          "p10": 5.5,
+          "p50": 7.6,
+          "p90": 9.7
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.6,
+        "p10": 6,
+        "p90": 17.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.332
+    },
+    {
+      "player_id": "00-178708",
+      "name": "Jauan Jennings",
+      "team": "SF",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.76,
+        "rush_share": 0,
+        "target_share": 0.18,
+        "route_share": 0.7
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 52,
+          "p10": 30.7,
+          "p50": 52,
+          "p90": 73.3
+        },
+        "receptions": {
+          "mean": 4.2,
+          "p10": 2.7,
+          "p50": 4.2,
+          "p90": 5.7
+        },
+        "targets": {
+          "mean": 6.2,
+          "p10": 4.5,
+          "p50": 6.2,
+          "p90": 7.9
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 9.2,
+        "p10": 4.8,
+        "p90": 13.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-018562",
+      "name": "Brandon Aiyuk",
+      "team": "SF",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.64,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.59
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 5.4,
+          "p10": 3.9,
+          "p50": 5.4,
+          "p90": 6.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.9,
+        "p10": 4.1,
+        "p90": 11.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.247
+    },
+    {
+      "player_id": "00-856259",
+      "name": "George Kittle",
+      "team": "SF",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.18,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "receptions": {
+          "mean": 4.6,
+          "p10": 2.9,
+          "p50": 4.6,
+          "p90": 6.3
+        },
+        "targets": {
+          "mean": 6.1,
+          "p10": 4.4,
+          "p50": 6.1,
+          "p90": 7.8
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 10.6,
+        "p10": 5.5,
+        "p90": 15.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    },
+    {
+      "player_id": "00-330222",
+      "name": "Matthew Stafford",
+      "team": "LA",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.04,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 268,
+          "p10": 192.4,
+          "p50": 268,
+          "p90": 343.6
+        },
+        "pass_tds": {
+          "mean": 1.9,
+          "p10": 0.8,
+          "p50": 1.9,
+          "p90": 3
+        },
+        "pass_atts": {
+          "mean": 34,
+          "p10": 28.8,
+          "p50": 34,
+          "p90": 39.2
+        },
+        "completions": {
+          "mean": 22.4,
+          "p10": 18.4,
+          "p50": 22.4,
+          "p90": 26.4
+        },
+        "interceptions": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 0.9
+        },
+        "rush_yds": {
+          "mean": 4,
+          "p10": 1.9,
+          "p50": 4,
+          "p90": 6.1
+        }
+      },
+      "fantasy": {
+        "mean": 18,
+        "p10": 9.4,
+        "p90": 26.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.076
+    },
+    {
+      "player_id": "00-213068",
+      "name": "Kyren Williams",
+      "team": "LA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0.69,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "rush_atts": {
+          "mean": 18,
+          "p10": 13.8,
+          "p50": 18,
+          "p90": 22.2
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.3,
+          "p50": 2.4,
+          "p90": 3.5
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1.1
+        }
+      },
+      "fantasy": {
+        "mean": 15.4,
+        "p10": 8,
+        "p90": 22.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.491
+    },
+    {
+      "player_id": "00-965632",
+      "name": "Blake Corum",
+      "team": "LA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.28,
+        "rush_share": 0.23,
+        "target_share": 0.02,
+        "route_share": 0.06
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 24,
+          "p10": 14.2,
+          "p50": 24,
+          "p90": 33.8
+        },
+        "rush_atts": {
+          "mean": 6,
+          "p10": 4.6,
+          "p50": 6,
+          "p90": 7.4
+        },
+        "rec_yds": {
+          "mean": 4,
+          "p10": 1.9,
+          "p50": 4,
+          "p90": 6.1
+        },
+        "receptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.3,
+        "p10": 2.2,
+        "p90": 6.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.221
+    },
+    {
+      "player_id": "00-968826",
+      "name": "Puka Nacua",
+      "team": "LA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.9,
+        "rush_share": 0,
+        "target_share": 0.31,
+        "route_share": 0.83
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 92,
+          "p10": 54.3,
+          "p50": 92,
+          "p90": 129.7
+        },
+        "receptions": {
+          "mean": 7.2,
+          "p10": 4.6,
+          "p50": 7.2,
+          "p90": 9.8
+        },
+        "targets": {
+          "mean": 10.4,
+          "p10": 7.5,
+          "p50": 10.4,
+          "p90": 13.3
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 15.9,
+        "p10": 8.3,
+        "p90": 23.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.407
+    },
+    {
+      "player_id": "00-726548",
+      "name": "Davante Adams",
+      "team": "LA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 71,
+          "p10": 41.9,
+          "p50": 71,
+          "p90": 100.1
+        },
+        "receptions": {
+          "mean": 5.4,
+          "p10": 3.5,
+          "p50": 5.4,
+          "p90": 7.3
+        },
+        "targets": {
+          "mean": 8.6,
+          "p10": 6.2,
+          "p50": 8.6,
+          "p90": 11
+        },
+        "rec_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 13.1,
+        "p10": 6.8,
+        "p90": 19.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.422
+    },
+    {
+      "player_id": "00-529862",
+      "name": "Tutu Atwell",
+      "team": "LA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.42,
+        "rush_share": 0,
+        "target_share": 0.08,
+        "route_share": 0.39
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 1.8,
+          "p10": 1.2,
+          "p50": 1.8,
+          "p90": 2.4
+        },
+        "targets": {
+          "mean": 2.8,
+          "p10": 2,
+          "p50": 2.8,
+          "p90": 3.6
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.4,
+        "p10": 2.3,
+        "p90": 6.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-556901",
+      "name": "Colby Parkinson",
+      "team": "LA",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.68,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.63
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2.6,
+          "p10": 1.7,
+          "p50": 2.6,
+          "p90": 3.5
+        },
+        "targets": {
+          "mean": 3.6,
+          "p10": 2.6,
+          "p50": 3.6,
+          "p90": 4.6
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5.2,
+        "p10": 2.7,
+        "p90": 7.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    }
+  ],
+  "drivers": [
+    {
+      "id": "indoor",
+      "title": "Indoor track",
+      "detail": "SoFi climate control removes weather as a passing-volume damper."
+    },
+    {
+      "id": "sf_skill",
+      "title": "49ers skill-player density",
+      "detail": "McCaffrey plus two-TE/WR looks keep San Francisco's scoring distribution wide."
+    },
+    {
+      "id": "la_outside",
+      "title": "Rams outside leverage",
+      "detail": "Nacua/Adams projected target concentration vs SF corners."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.54,
+    "note": "Coin-flip win probability with a high projected total."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

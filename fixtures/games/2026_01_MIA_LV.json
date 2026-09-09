@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_MIA_LV",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T16:25:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Allegiant Stadium",
+    "city": "Las Vegas",
+    "state": "NV",
+    "indoor": true
+  },
+  "weather": {
+    "temp_f": 72,
+    "wind_mph": 0,
+    "condition": "Indoor — climate controlled",
+    "precip_pct": 0
+  },
+  "teams": {
+    "away": {
+      "abbr": "MIA",
+      "name": "Miami Dolphins"
+    },
+    "home": {
+      "abbr": "LV",
+      "name": "Las Vegas Raiders"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.46,
+    "away_win_prob": 0.54,
+    "proj_margin_home": -1.4,
+    "proj_total": 44.7,
+    "margin_p10": -12.9,
+    "margin_p90": 10.1,
+    "total_p10": 35.2,
+    "total_p90": 54.2,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 23.1,
+      "pass_yards": 254,
+      "rush_yards": 108,
+      "pass_attempts": 33,
+      "rush_attempts": 24,
+      "sacks_taken": 1.6,
+      "turnovers": 0.6
+    },
+    "home": {
+      "points": 21.7,
+      "pass_yards": 236,
+      "rush_yards": 110,
+      "pass_attempts": 33,
+      "rush_attempts": 25,
+      "sacks_taken": 2.2,
+      "turnovers": 0.7
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-241122",
+      "name": "Tua Tagovailoa",
+      "team": "MIA",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.08,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 254,
+          "p10": 182.4,
+          "p50": 254,
+          "p90": 325.6
+        },
+        "pass_tds": {
+          "mean": 1.6,
+          "p10": 0.7,
+          "p50": 1.6,
+          "p90": 2.5
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 22.6,
+          "p10": 18.5,
+          "p50": 22.6,
+          "p90": 26.7
+        },
+        "interceptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 8,
+          "p10": 3.9,
+          "p50": 8,
+          "p90": 12.1
+        }
+      },
+      "fantasy": {
+        "mean": 16.5,
+        "p10": 8.6,
+        "p90": 24.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.087
+    },
+    {
+      "player_id": "00-669904",
+      "name": "De'Von Achane",
+      "team": "MIA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.66,
+        "rush_share": 0.5,
+        "target_share": 0.15,
+        "route_share": 0.19
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "rush_atts": {
+          "mean": 13,
+          "p10": 10,
+          "p50": 13,
+          "p90": 16
+        },
+        "rec_yds": {
+          "mean": 36,
+          "p10": 17.5,
+          "p50": 36,
+          "p90": 54.5
+        },
+        "receptions": {
+          "mean": 4.2,
+          "p10": 2.3,
+          "p50": 4.2,
+          "p90": 6.1
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 16.9,
+        "p10": 8.8,
+        "p90": 25,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.473
+    },
+    {
+      "player_id": "00-070219",
+      "name": "Jaylen Wright",
+      "team": "MIA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.3,
+        "rush_share": 0.27,
+        "target_share": 0.02,
+        "route_share": 0.06
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "rush_atts": {
+          "mean": 7,
+          "p10": 5.4,
+          "p50": 7,
+          "p90": 8.6
+        },
+        "rec_yds": {
+          "mean": 4,
+          "p10": 1.9,
+          "p50": 4,
+          "p90": 6.1
+        },
+        "receptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.6,
+        "p10": 2.4,
+        "p90": 6.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    },
+    {
+      "player_id": "00-529814",
+      "name": "Tyreek Hill",
+      "team": "MIA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.26,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "receptions": {
+          "mean": 5.8,
+          "p10": 3.7,
+          "p50": 5.8,
+          "p90": 7.9
+        },
+        "targets": {
+          "mean": 8.8,
+          "p10": 6.3,
+          "p50": 8.8,
+          "p90": 11.3
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 13.8,
+        "p10": 7.2,
+        "p90": 20.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.37
+    },
+    {
+      "player_id": "00-911493",
+      "name": "Jaylen Waddle",
+      "team": "MIA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0,
+        "target_share": 0.22,
+        "route_share": 0.72
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 64,
+          "p10": 37.8,
+          "p50": 64,
+          "p90": 90.2
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 3.3,
+          "p50": 5.2,
+          "p90": 7.1
+        },
+        "targets": {
+          "mean": 7.4,
+          "p10": 5.3,
+          "p50": 7.4,
+          "p90": 9.5
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11,
+        "p10": 5.7,
+        "p90": 16.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-024529",
+      "name": "Nick Westbrook-Ikhine",
+      "team": "MIA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.5,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.46
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 26,
+          "p10": 15.3,
+          "p50": 26,
+          "p90": 36.7
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.2,
+          "p10": 2.3,
+          "p50": 3.2,
+          "p90": 4.1
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.4,
+        "p10": 2.3,
+        "p90": 6.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.18
+    },
+    {
+      "player_id": "00-110356",
+      "name": "Darren Waller",
+      "team": "MIA",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.62,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.57
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 4.6,
+          "p10": 3.3,
+          "p50": 4.6,
+          "p90": 5.9
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.2,
+        "p10": 3.7,
+        "p90": 10.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-315093",
+      "name": "Geno Smith",
+      "team": "LV",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.12,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 236,
+          "p10": 169.5,
+          "p50": 236,
+          "p90": 302.5
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.3
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 21.4,
+          "p10": 17.6,
+          "p50": 21.4,
+          "p90": 25.2
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 14,
+          "p10": 6.8,
+          "p50": 14,
+          "p90": 21.2
+        }
+      },
+      "fantasy": {
+        "mean": 15.9,
+        "p10": 8.3,
+        "p90": 23.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.106
+    },
+    {
+      "player_id": "00-090469",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0.62,
+        "target_share": 0.11,
+        "route_share": 0.15
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 78,
+          "p10": 46,
+          "p50": 78,
+          "p90": 110
+        },
+        "rush_atts": {
+          "mean": 16,
+          "p10": 12.3,
+          "p50": 16,
+          "p90": 19.7
+        },
+        "rec_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.5,
+          "p50": 2.8,
+          "p90": 4.1
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 15.2,
+        "p10": 7.9,
+        "p90": 22.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.46
+    },
+    {
+      "player_id": "00-628993",
+      "name": "Zamir White",
+      "team": "LV",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.26,
+        "rush_share": 0.19,
+        "target_share": 0.02,
+        "route_share": 0.06
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 18,
+          "p10": 10.6,
+          "p50": 18,
+          "p90": 25.4
+        },
+        "rush_atts": {
+          "mean": 5,
+          "p10": 3.8,
+          "p50": 5,
+          "p90": 6.2
+        },
+        "rec_yds": {
+          "mean": 4,
+          "p10": 1.9,
+          "p50": 4,
+          "p90": 6.1
+        },
+        "receptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.5
+        }
+      },
+      "fantasy": {
+        "mean": 3.2,
+        "p10": 1.7,
+        "p90": 4.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-346210",
+      "name": "Jakobi Meyers",
+      "team": "LV",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 5.6,
+          "p10": 3.6,
+          "p50": 5.6,
+          "p90": 7.6
+        },
+        "targets": {
+          "mean": 8,
+          "p10": 5.7,
+          "p50": 8,
+          "p90": 10.3
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.5,
+        "p10": 6,
+        "p90": 17,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-157316",
+      "name": "Tre Tucker",
+      "team": "LV",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 5.4,
+          "p10": 3.9,
+          "p50": 5.4,
+          "p90": 6.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.9,
+        "p10": 4.1,
+        "p90": 11.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.247
+    },
+    {
+      "player_id": "00-019550",
+      "name": "Dont'e Thornton Jr.",
+      "team": "LV",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.2,
+          "p10": 2.3,
+          "p50": 3.2,
+          "p90": 4.1
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.5,
+        "p10": 2.3,
+        "p90": 6.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-553316",
+      "name": "Brock Bowers",
+      "team": "LV",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.86,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.79
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "receptions": {
+          "mean": 6.4,
+          "p10": 4.1,
+          "p50": 6.4,
+          "p90": 8.7
+        },
+        "targets": {
+          "mean": 8.6,
+          "p10": 6.2,
+          "p50": 8.6,
+          "p90": 11
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.9,
+        "p10": 6.7,
+        "p90": 19.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    }
+  ],
+  "drivers": [
+    {
+      "id": "speed",
+      "title": "Dolphins explosives",
+      "detail": "Hill/Waddle/Achane keep Miami's p90 total elevated."
+    },
+    {
+      "id": "bowers",
+      "title": "Bowers hub",
+      "detail": "Raiders projected targets concentrate on Brock Bowers."
+    },
+    {
+      "id": "indoor",
+      "title": "Allegiant indoor",
+      "detail": "Closed roof, fast track."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.51,
+    "note": "Explosive-play variance is the main uncertainty."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

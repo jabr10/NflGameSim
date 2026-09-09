@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_CLE_JAX",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T13:00:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "EverBank Stadium",
+    "city": "Jacksonville",
+    "state": "FL",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 88,
+    "wind_mph": 8,
+    "condition": "Humid, partly cloudy",
+    "precip_pct": 25
+  },
+  "teams": {
+    "away": {
+      "abbr": "CLE",
+      "name": "Cleveland Browns"
+    },
+    "home": {
+      "abbr": "JAX",
+      "name": "Jacksonville Jaguars"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.58,
+    "away_win_prob": 0.42,
+    "proj_margin_home": 3.1,
+    "proj_total": 41.9,
+    "margin_p10": -8.4,
+    "margin_p90": 14.6,
+    "total_p10": 32.4,
+    "total_p90": 51.4,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 19.4,
+      "pass_yards": 222,
+      "rush_yards": 98,
+      "pass_attempts": 34,
+      "rush_attempts": 26,
+      "sacks_taken": 1.6,
+      "turnovers": 0.8
+    },
+    "home": {
+      "points": 22.5,
+      "pass_yards": 242,
+      "rush_yards": 132,
+      "pass_attempts": 33,
+      "rush_attempts": 28,
+      "sacks_taken": 2.1,
+      "turnovers": 0.6
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-662899",
+      "name": "Joe Flacco",
+      "team": "CLE",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 0.9,
+        "rush_share": 0.04,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 222,
+          "p10": 159.4,
+          "p50": 222,
+          "p90": 284.6
+        },
+        "pass_tds": {
+          "mean": 1.3,
+          "p10": 0.5,
+          "p50": 1.3,
+          "p90": 2
+        },
+        "pass_atts": {
+          "mean": 34,
+          "p10": 28.8,
+          "p50": 34,
+          "p90": 39.2
+        },
+        "completions": {
+          "mean": 21,
+          "p10": 17.2,
+          "p50": 21,
+          "p90": 24.8
+        },
+        "interceptions": {
+          "mean": 0.8,
+          "p10": 0.2,
+          "p50": 0.8,
+          "p90": 1.4
+        },
+        "rush_yds": {
+          "mean": 4,
+          "p10": 1.9,
+          "p50": 4,
+          "p90": 6.1
+        }
+      },
+      "fantasy": {
+        "mean": 12.9,
+        "p10": 6.7,
+        "p90": 19.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.076
+    },
+    {
+      "player_id": "00-513486",
+      "name": "Quinshon Judkins",
+      "team": "CLE",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0.54,
+        "target_share": 0.07,
+        "route_share": 0.11
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 62,
+          "p10": 36.6,
+          "p50": 62,
+          "p90": 87.4
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 12,
+          "p10": 5.8,
+          "p50": 12,
+          "p90": 18.2
+        },
+        "receptions": {
+          "mean": 1.8,
+          "p10": 1,
+          "p50": 1.8,
+          "p90": 2.6
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 10.9,
+        "p10": 5.7,
+        "p90": 16.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.365
+    },
+    {
+      "player_id": "00-020786",
+      "name": "Jerome Ford",
+      "team": "CLE",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.4,
+        "rush_share": 0.31,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 32,
+          "p10": 18.9,
+          "p50": 32,
+          "p90": 45.1
+        },
+        "rush_atts": {
+          "mean": 8,
+          "p10": 6.2,
+          "p50": 8,
+          "p90": 9.8
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.3,
+          "p50": 2.4,
+          "p90": 3.5
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 7.6,
+        "p10": 4,
+        "p90": 11.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.247
+    },
+    {
+      "player_id": "00-055280",
+      "name": "Jerry Jeudy",
+      "team": "CLE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 3.3,
+          "p50": 5.2,
+          "p90": 7.1
+        },
+        "targets": {
+          "mean": 8,
+          "p10": 5.7,
+          "p50": 8,
+          "p90": 10.3
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.3,
+        "p10": 5.9,
+        "p90": 16.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-966290",
+      "name": "Cedric Tillman",
+      "team": "CLE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 46,
+          "p10": 27.1,
+          "p50": 46,
+          "p90": 64.9
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 5.6,
+          "p10": 4,
+          "p50": 5.6,
+          "p90": 7.2
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.7,
+        "p10": 4,
+        "p90": 11.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-535147",
+      "name": "Jamari Thrash",
+      "team": "CLE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.45,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.41
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 24,
+          "p10": 14.2,
+          "p50": 24,
+          "p90": 33.8
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.2,
+          "p10": 2.3,
+          "p50": 3.2,
+          "p90": 4.1
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.5
+        }
+      },
+      "fantasy": {
+        "mean": 4,
+        "p10": 2.1,
+        "p90": 5.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.152
+    },
+    {
+      "player_id": "00-982984",
+      "name": "David Njoku",
+      "team": "CLE",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0,
+        "target_share": 0.19,
+        "route_share": 0.72
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 4.6,
+          "p10": 2.9,
+          "p50": 4.6,
+          "p90": 6.3
+        },
+        "targets": {
+          "mean": 6.4,
+          "p10": 4.6,
+          "p50": 6.4,
+          "p90": 8.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 9.1,
+        "p10": 4.7,
+        "p90": 13.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-111198",
+      "name": "Trevor Lawrence",
+      "team": "JAX",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.19,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 242,
+          "p10": 173.8,
+          "p50": 242,
+          "p90": 310.2
+        },
+        "pass_tds": {
+          "mean": 1.6,
+          "p10": 0.7,
+          "p50": 1.6,
+          "p90": 2.4
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 21.4,
+          "p10": 17.6,
+          "p50": 21.4,
+          "p90": 25.2
+        },
+        "interceptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 24,
+          "p10": 11.7,
+          "p50": 24,
+          "p90": 36.3
+        }
+      },
+      "fantasy": {
+        "mean": 18.2,
+        "p10": 9.5,
+        "p90": 26.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.14
+    },
+    {
+      "player_id": "00-271360",
+      "name": "Travis Etienne Jr.",
+      "team": "JAX",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0.54,
+        "target_share": 0.11,
+        "route_share": 0.15
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 66,
+          "p10": 38.9,
+          "p50": 66,
+          "p90": 93.1
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        },
+        "receptions": {
+          "mean": 3,
+          "p10": 1.7,
+          "p50": 3,
+          "p90": 4.3
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 13.3,
+        "p10": 6.9,
+        "p90": 19.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.396
+    },
+    {
+      "player_id": "00-784493",
+      "name": "Tank Bigsby",
+      "team": "JAX",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.38,
+        "rush_share": 0.38,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 42,
+          "p10": 24.8,
+          "p50": 42,
+          "p90": 59.2
+        },
+        "rush_atts": {
+          "mean": 10,
+          "p10": 7.7,
+          "p50": 10,
+          "p90": 12.3
+        },
+        "rec_yds": {
+          "mean": 5,
+          "p10": 2.4,
+          "p50": 5,
+          "p90": 7.6
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 7.1,
+        "p10": 3.7,
+        "p90": 10.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-576359",
+      "name": "Brian Thomas Jr.",
+      "team": "JAX",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.86,
+        "rush_share": 0,
+        "target_share": 0.26,
+        "route_share": 0.79
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "receptions": {
+          "mean": 5.8,
+          "p10": 3.7,
+          "p50": 5.8,
+          "p90": 7.9
+        },
+        "targets": {
+          "mean": 8.8,
+          "p10": 6.3,
+          "p50": 8.8,
+          "p90": 11.3
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 14,
+        "p10": 7.3,
+        "p90": 20.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.386
+    },
+    {
+      "player_id": "00-431350",
+      "name": "Travis Hunter",
+      "team": "JAX",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.74,
+        "rush_share": 0,
+        "target_share": 0.2,
+        "route_share": 0.68
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 54,
+          "p10": 31.9,
+          "p50": 54,
+          "p90": 76.1
+        },
+        "receptions": {
+          "mean": 4.4,
+          "p10": 2.8,
+          "p50": 4.4,
+          "p90": 6
+        },
+        "targets": {
+          "mean": 6.8,
+          "p10": 4.9,
+          "p50": 6.8,
+          "p90": 8.7
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 9.5,
+        "p10": 4.9,
+        "p90": 14.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-376568",
+      "name": "Parker Washington",
+      "team": "JAX",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.1,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2.2,
+          "p10": 1.4,
+          "p50": 2.2,
+          "p90": 3
+        },
+        "targets": {
+          "mean": 3.4,
+          "p10": 2.4,
+          "p50": 3.4,
+          "p90": 4.4
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.6,
+        "p10": 2.4,
+        "p90": 6.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-188331",
+      "name": "Brenton Strange",
+      "team": "JAX",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 4.6,
+          "p10": 3.3,
+          "p50": 4.6,
+          "p90": 5.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 6.6,
+        "p10": 3.4,
+        "p90": 9.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    }
+  ],
+  "drivers": [
+    {
+      "id": "jax_home",
+      "title": "Jaguars home script",
+      "detail": "Lawrence plus Thomas Jr. lift Jacksonville's projected scoring at home."
+    },
+    {
+      "id": "cle_pass",
+      "title": "Browns passing volatility",
+      "detail": "Cleveland's projected pass efficiency is the wider error bar."
+    },
+    {
+      "id": "heat",
+      "title": "Jacksonville humidity",
+      "detail": "Warm, still air — small run-script nudge in the second half."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.53,
+    "note": "Lower projected total; quarterback bands drive uncertainty."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

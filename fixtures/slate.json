@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0.0",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring_default": "half_ppr",
+  "timezone": "America/New_York",
+  "games": [
+    {
+      "game_id": "2026_01_NE_SEA",
+      "away": "NE",
+      "home": "SEA",
+      "kickoff": "2026-09-09T20:20:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Lumen Field",
+        "city": "Seattle",
+        "state": "WA",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 67,
+        "wind_mph": 7,
+        "condition": "Partly cloudy",
+        "precip_pct": 15
+      }
+    },
+    {
+      "game_id": "2026_01_SF_LA",
+      "away": "SF",
+      "home": "LA",
+      "kickoff": "2026-09-10T20:35:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood",
+        "state": "CA",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — climate controlled",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_CHI_CAR",
+      "away": "CHI",
+      "home": "CAR",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Bank of America Stadium",
+        "city": "Charlotte",
+        "state": "NC",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 82,
+        "wind_mph": 6,
+        "condition": "Sunny",
+        "precip_pct": 10
+      }
+    },
+    {
+      "game_id": "2026_01_TB_CIN",
+      "away": "TB",
+      "home": "CIN",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Paycor Stadium",
+        "city": "Cincinnati",
+        "state": "OH",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 77,
+        "wind_mph": 9,
+        "condition": "Mostly cloudy",
+        "precip_pct": 20
+      }
+    },
+    {
+      "game_id": "2026_01_NO_DET",
+      "away": "NO",
+      "home": "DET",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Ford Field",
+        "city": "Detroit",
+        "state": "MI",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — climate controlled",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_BUF_HOU",
+      "away": "BUF",
+      "home": "HOU",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "NRG Stadium",
+        "city": "Houston",
+        "state": "TX",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — roof closed",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_BAL_IND",
+      "away": "BAL",
+      "home": "IND",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Lucas Oil Stadium",
+        "city": "Indianapolis",
+        "state": "IN",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — roof closed",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_CLE_JAX",
+      "away": "CLE",
+      "home": "JAX",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "EverBank Stadium",
+        "city": "Jacksonville",
+        "state": "FL",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 88,
+        "wind_mph": 8,
+        "condition": "Humid, partly cloudy",
+        "precip_pct": 25
+      }
+    },
+    {
+      "game_id": "2026_01_ATL_PIT",
+      "away": "ATL",
+      "home": "PIT",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Acrisure Stadium",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 73,
+        "wind_mph": 12,
+        "condition": "Breezy, cloudy",
+        "precip_pct": 20
+      }
+    },
+    {
+      "game_id": "2026_01_NYJ_TEN",
+      "away": "NYJ",
+      "home": "TEN",
+      "kickoff": "2026-09-13T13:00:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Nissan Stadium",
+        "city": "Nashville",
+        "state": "TN",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 84,
+        "wind_mph": 5,
+        "condition": "Partly cloudy",
+        "precip_pct": 15
+      }
+    },
+    {
+      "game_id": "2026_01_ARI_LAC",
+      "away": "ARI",
+      "home": "LAC",
+      "kickoff": "2026-09-13T16:25:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood",
+        "state": "CA",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — climate controlled",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_MIA_LV",
+      "away": "MIA",
+      "home": "LV",
+      "kickoff": "2026-09-13T16:25:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Allegiant Stadium",
+        "city": "Las Vegas",
+        "state": "NV",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — climate controlled",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_GB_MIN",
+      "away": "GB",
+      "home": "MIN",
+      "kickoff": "2026-09-13T16:25:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "U.S. Bank Stadium",
+        "city": "Minneapolis",
+        "state": "MN",
+        "indoor": true
+      },
+      "weather": {
+        "temp_f": 72,
+        "wind_mph": 0,
+        "condition": "Indoor — climate controlled",
+        "precip_pct": 0
+      }
+    },
+    {
+      "game_id": "2026_01_WAS_PHI",
+      "away": "WAS",
+      "home": "PHI",
+      "kickoff": "2026-09-13T16:25:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia",
+        "state": "PA",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 80,
+        "wind_mph": 10,
+        "condition": "Mostly sunny",
+        "precip_pct": 10
+      }
+    },
+    {
+      "game_id": "2026_01_DAL_NYG",
+      "away": "DAL",
+      "home": "NYG",
+      "kickoff": "2026-09-13T20:20:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "MetLife Stadium",
+        "city": "East Rutherford",
+        "state": "NJ",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 71,
+        "wind_mph": 11,
+        "condition": "Clear",
+        "precip_pct": 5
+      }
+    },
+    {
+      "game_id": "2026_01_DEN_KC",
+      "away": "DEN",
+      "home": "KC",
+      "kickoff": "2026-09-14T20:15:00-04:00",
+      "status": "scheduled",
+      "venue": {
+        "name": "GEHA Field at Arrowhead Stadium",
+        "city": "Kansas City",
+        "state": "MO",
+        "indoor": false
+      },
+      "weather": {
+        "temp_f": 75,
+        "wind_mph": 13,
+        "condition": "Breezy, clear",
+        "precip_pct": 5
+      }
+    }
+  ]
+}

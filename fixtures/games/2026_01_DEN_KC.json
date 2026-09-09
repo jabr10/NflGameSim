@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_DEN_KC",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-14T20:15:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "GEHA Field at Arrowhead Stadium",
+    "city": "Kansas City",
+    "state": "MO",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 75,
+    "wind_mph": 13,
+    "condition": "Breezy, clear",
+    "precip_pct": 5
+  },
+  "teams": {
+    "away": {
+      "abbr": "DEN",
+      "name": "Denver Broncos"
+    },
+    "home": {
+      "abbr": "KC",
+      "name": "Kansas City Chiefs"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.67,
+    "away_win_prob": 0.33,
+    "proj_margin_home": 6.1,
+    "proj_total": 46.4,
+    "margin_p10": -5.4,
+    "margin_p90": 17.6,
+    "total_p10": 36.9,
+    "total_p90": 55.9,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 20.2,
+      "pass_yards": 238,
+      "rush_yards": 116,
+      "pass_attempts": 32,
+      "rush_attempts": 23,
+      "sacks_taken": 2.7,
+      "turnovers": 0.6
+    },
+    "home": {
+      "points": 26.3,
+      "pass_yards": 272,
+      "rush_yards": 126,
+      "pass_attempts": 35,
+      "rush_attempts": 26,
+      "sacks_taken": 2.2,
+      "turnovers": 0.5
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-501333",
+      "name": "Bo Nix",
+      "team": "DEN",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.19,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 238,
+          "p10": 170.9,
+          "p50": 238,
+          "p90": 305.1
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.4
+        },
+        "pass_atts": {
+          "mean": 32,
+          "p10": 27.1,
+          "p50": 32,
+          "p90": 36.9
+        },
+        "completions": {
+          "mean": 21,
+          "p10": 17.2,
+          "p50": 21,
+          "p90": 24.8
+        },
+        "interceptions": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        }
+      },
+      "fantasy": {
+        "mean": 18.5,
+        "p10": 9.6,
+        "p90": 27.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.157
+    },
+    {
+      "player_id": "00-879123",
+      "name": "J.K. Dobbins",
+      "team": "DEN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0.54,
+        "target_share": 0.08,
+        "route_share": 0.12
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 64,
+          "p10": 37.8,
+          "p50": 64,
+          "p90": 90.2
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 14,
+          "p10": 6.8,
+          "p50": 14,
+          "p90": 21.2
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.1,
+          "p50": 2,
+          "p90": 2.9
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 11.9,
+        "p10": 6.2,
+        "p90": 17.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.402
+    },
+    {
+      "player_id": "00-283806",
+      "name": "Jaleel McLaughlin",
+      "team": "DEN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.32,
+        "rush_share": 0.19,
+        "target_share": 0.08,
+        "route_share": 0.12
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 24,
+          "p10": 14.2,
+          "p50": 24,
+          "p90": 33.8
+        },
+        "rush_atts": {
+          "mean": 5,
+          "p10": 3.8,
+          "p50": 5,
+          "p90": 6.2
+        },
+        "rec_yds": {
+          "mean": 16,
+          "p10": 7.8,
+          "p50": 16,
+          "p90": 24.2
+        },
+        "receptions": {
+          "mean": 2.2,
+          "p10": 1.2,
+          "p50": 2.2,
+          "p90": 3.2
+        },
+        "rush_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6.2,
+        "p10": 3.2,
+        "p90": 9.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    },
+    {
+      "player_id": "00-122118",
+      "name": "Courtland Sutton",
+      "team": "DEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 3.3,
+          "p50": 5.2,
+          "p90": 7.1
+        },
+        "targets": {
+          "mean": 8,
+          "p10": 5.7,
+          "p50": 8,
+          "p90": 10.3
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.3,
+        "p10": 6.4,
+        "p90": 18.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    },
+    {
+      "player_id": "00-999936",
+      "name": "Marvin Mims Jr.",
+      "team": "DEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.53
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 2.1,
+          "p50": 3.2,
+          "p90": 4.3
+        },
+        "targets": {
+          "mean": 4.8,
+          "p10": 3.4,
+          "p50": 4.8,
+          "p90": 6.2
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.7,
+        "p10": 4,
+        "p90": 11.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-493878",
+      "name": "Troy Franklin",
+      "team": "DEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0,
+        "target_share": 0.13,
+        "route_share": 0.51
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.8,
+          "p50": 2.8,
+          "p90": 3.8
+        },
+        "targets": {
+          "mean": 4.4,
+          "p10": 3.2,
+          "p50": 4.4,
+          "p90": 5.6
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6,
+        "p10": 3.1,
+        "p90": 8.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.194
+    },
+    {
+      "player_id": "00-378291",
+      "name": "Evan Engram",
+      "team": "DEN",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0,
+        "target_share": 0.18,
+        "route_share": 0.66
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 46,
+          "p10": 27.1,
+          "p50": 46,
+          "p90": 64.9
+        },
+        "receptions": {
+          "mean": 4.6,
+          "p10": 2.9,
+          "p50": 4.6,
+          "p90": 6.3
+        },
+        "targets": {
+          "mean": 6,
+          "p10": 4.3,
+          "p50": 6,
+          "p90": 7.7
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.5,
+        "p10": 4.4,
+        "p90": 12.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.26
+    },
+    {
+      "player_id": "00-701459",
+      "name": "Patrick Mahomes",
+      "team": "KC",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.19,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 272,
+          "p10": 195.3,
+          "p50": 272,
+          "p90": 348.7
+        },
+        "pass_tds": {
+          "mean": 2,
+          "p10": 0.8,
+          "p50": 2,
+          "p90": 3.1
+        },
+        "pass_atts": {
+          "mean": 35,
+          "p10": 29.6,
+          "p50": 35,
+          "p90": 40.4
+        },
+        "completions": {
+          "mean": 23.4,
+          "p10": 19.2,
+          "p50": 23.4,
+          "p90": 27.6
+        },
+        "interceptions": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        },
+        "rush_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        }
+      },
+      "fantasy": {
+        "mean": 21.9,
+        "p10": 11.4,
+        "p90": 32.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.157
+    },
+    {
+      "player_id": "00-663024",
+      "name": "Isiah Pacheco",
+      "team": "KC",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0.54,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 66,
+          "p10": 38.9,
+          "p50": 66,
+          "p90": 93.1
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.3,
+          "p50": 2.4,
+          "p90": 3.5
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.8,
+        "p10": 6.7,
+        "p90": 18.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.417
+    },
+    {
+      "player_id": "00-803119",
+      "name": "Kareem Hunt",
+      "team": "KC",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.36,
+        "rush_share": 0.31,
+        "target_share": 0.05,
+        "route_share": 0.09
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 32,
+          "p10": 18.9,
+          "p50": 32,
+          "p90": 45.1
+        },
+        "rush_atts": {
+          "mean": 8,
+          "p10": 6.2,
+          "p50": 8,
+          "p90": 9.8
+        },
+        "rec_yds": {
+          "mean": 8,
+          "p10": 3.9,
+          "p50": 8,
+          "p90": 12.1
+        },
+        "receptions": {
+          "mean": 1.2,
+          "p10": 0.7,
+          "p50": 1.2,
+          "p90": 1.7
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 6.8,
+        "p10": 3.5,
+        "p90": 10.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-103894",
+      "name": "Rashee Rice",
+      "team": "KC",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.8,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.74
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 74,
+          "p10": 43.7,
+          "p50": 74,
+          "p90": 104.3
+        },
+        "receptions": {
+          "mean": 6.2,
+          "p10": 4,
+          "p50": 6.2,
+          "p90": 8.4
+        },
+        "targets": {
+          "mean": 8.6,
+          "p10": 6.2,
+          "p50": 8.6,
+          "p90": 11
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 13.4,
+        "p10": 7,
+        "p90": 19.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.386
+    },
+    {
+      "player_id": "00-617767",
+      "name": "Xavier Worthy",
+      "team": "KC",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.74,
+        "rush_share": 0,
+        "target_share": 0.19,
+        "route_share": 0.68
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "receptions": {
+          "mean": 4,
+          "p10": 2.6,
+          "p50": 4,
+          "p90": 5.4
+        },
+        "targets": {
+          "mean": 6.4,
+          "p10": 4.6,
+          "p50": 6.4,
+          "p90": 8.2
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 10,
+        "p10": 5.2,
+        "p90": 14.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-119146",
+      "name": "Hollywood Brown",
+      "team": "KC",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0,
+        "target_share": 0.12,
+        "route_share": 0.51
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "receptions": {
+          "mean": 2.6,
+          "p10": 1.7,
+          "p50": 2.6,
+          "p90": 3.5
+        },
+        "targets": {
+          "mean": 4,
+          "p10": 2.9,
+          "p50": 4,
+          "p90": 5.1
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6,
+        "p10": 3.1,
+        "p90": 8.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    },
+    {
+      "player_id": "00-200284",
+      "name": "Travis Kelce",
+      "team": "KC",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.21,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "receptions": {
+          "mean": 5.4,
+          "p10": 3.5,
+          "p50": 5.4,
+          "p90": 7.3
+        },
+        "targets": {
+          "mean": 7.2,
+          "p10": 5.2,
+          "p50": 7.2,
+          "p90": 9.2
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 11,
+        "p10": 5.7,
+        "p90": 16.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    }
+  ],
+  "drivers": [
+    {
+      "id": "mahomes",
+      "title": "Chiefs pass-game density",
+      "detail": "Mahomes to Rice/Kelce/Worthy is the highest-confidence scoring cluster on the slate."
+    },
+    {
+      "id": "arrowhead",
+      "title": "Arrowhead night",
+      "detail": "Home environment plus a bit of wind — KC still projected to throw."
+    },
+    {
+      "id": "nix",
+      "title": "Nix keep-pace",
+      "detail": "Broncos stay attached via balanced pass/run, not a single feature back."
+    }
+  ],
+  "confidence": {
+    "label": "medium-high",
+    "score": 0.67,
+    "note": "Chiefs usage is stable; weather is a small total trim only."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

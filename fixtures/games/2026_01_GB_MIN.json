@@ -1,0 +1,794 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_GB_MIN",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T16:25:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "U.S. Bank Stadium",
+    "city": "Minneapolis",
+    "state": "MN",
+    "indoor": true
+  },
+  "weather": {
+    "temp_f": 72,
+    "wind_mph": 0,
+    "condition": "Indoor — climate controlled",
+    "precip_pct": 0
+  },
+  "teams": {
+    "away": {
+      "abbr": "GB",
+      "name": "Green Bay Packers"
+    },
+    "home": {
+      "abbr": "MIN",
+      "name": "Minnesota Vikings"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.48,
+    "away_win_prob": 0.52,
+    "proj_margin_home": -0.7,
+    "proj_total": 44.1,
+    "margin_p10": -12.2,
+    "margin_p90": 10.8,
+    "total_p10": 34.6,
+    "total_p90": 53.6,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 22.4,
+      "pass_yards": 252,
+      "rush_yards": 114,
+      "pass_attempts": 32,
+      "rush_attempts": 26,
+      "sacks_taken": 1.9,
+      "turnovers": 0.5
+    },
+    "home": {
+      "points": 21.7,
+      "pass_yards": 234,
+      "rush_yards": 132,
+      "pass_attempts": 31,
+      "rush_attempts": 28,
+      "sacks_taken": 2.2,
+      "turnovers": 0.7
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-973097",
+      "name": "Jordan Love",
+      "team": "GB",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.12,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 252,
+          "p10": 180.9,
+          "p50": 252,
+          "p90": 323.1
+        },
+        "pass_tds": {
+          "mean": 1.7,
+          "p10": 0.7,
+          "p50": 1.7,
+          "p90": 2.7
+        },
+        "pass_atts": {
+          "mean": 32,
+          "p10": 27.1,
+          "p50": 32,
+          "p90": 36.9
+        },
+        "completions": {
+          "mean": 21.2,
+          "p10": 17.4,
+          "p50": 21.2,
+          "p90": 25
+        },
+        "interceptions": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 16,
+          "p10": 7.8,
+          "p50": 16,
+          "p90": 24.2
+        }
+      },
+      "fantasy": {
+        "mean": 18.2,
+        "p10": 9.5,
+        "p90": 26.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.114
+    },
+    {
+      "player_id": "00-248907",
+      "name": "Josh Jacobs",
+      "team": "GB",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0.65,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 80,
+          "p10": 47.2,
+          "p50": 80,
+          "p90": 112.8
+        },
+        "rush_atts": {
+          "mean": 17,
+          "p10": 13.1,
+          "p50": 17,
+          "p90": 20.9
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.3,
+          "p50": 2.4,
+          "p90": 3.5
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1.1
+        }
+      },
+      "fantasy": {
+        "mean": 15.2,
+        "p10": 7.9,
+        "p90": 22.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.491
+    },
+    {
+      "player_id": "00-330146",
+      "name": "Emanuel Wilson",
+      "team": "GB",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.26,
+        "rush_share": 0.19,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 18,
+          "p10": 10.6,
+          "p50": 18,
+          "p90": 25.4
+        },
+        "rush_atts": {
+          "mean": 5,
+          "p10": 3.8,
+          "p50": 5,
+          "p90": 6.2
+        },
+        "rec_yds": {
+          "mean": 6,
+          "p10": 2.9,
+          "p50": 6,
+          "p90": 9.1
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.5
+        }
+      },
+      "fantasy": {
+        "mean": 3.5,
+        "p10": 1.8,
+        "p90": 5.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-0035689",
+      "name": "Romeo Doubs",
+      "team": "GB",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.62,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.57
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 42,
+          "p10": 24.8,
+          "p50": 42,
+          "p90": 59.2
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 2.1,
+          "p50": 3.2,
+          "p90": 4.3
+        },
+        "targets": {
+          "mean": 5.4,
+          "p10": 3.9,
+          "p50": 5.4,
+          "p90": 6.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.1,
+        "p10": 3.7,
+        "p90": 10.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-903910",
+      "name": "Jayden Reed",
+      "team": "GB",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0,
+        "target_share": 0.19,
+        "route_share": 0.66
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "receptions": {
+          "mean": 4.6,
+          "p10": 2.9,
+          "p50": 4.6,
+          "p90": 6.3
+        },
+        "targets": {
+          "mean": 6.6,
+          "p10": 4.7,
+          "p50": 6.6,
+          "p90": 8.5
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 10,
+        "p10": 5.2,
+        "p90": 14.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-505726",
+      "name": "Matthew Golden",
+      "team": "GB",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.68,
+        "rush_share": 0,
+        "target_share": 0.17,
+        "route_share": 0.63
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 52,
+          "p10": 30.7,
+          "p50": 52,
+          "p90": 73.3
+        },
+        "receptions": {
+          "mean": 3.8,
+          "p10": 2.4,
+          "p50": 3.8,
+          "p90": 5.2
+        },
+        "targets": {
+          "mean": 5.8,
+          "p10": 4.2,
+          "p50": 5.8,
+          "p90": 7.4
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.8,
+        "p10": 4.6,
+        "p90": 13,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-904545",
+      "name": "Tucker Kraft",
+      "team": "GB",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.72
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 4,
+          "p10": 2.6,
+          "p50": 4,
+          "p90": 5.4
+        },
+        "targets": {
+          "mean": 5.4,
+          "p10": 3.9,
+          "p50": 5.4,
+          "p90": 6.9
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 8.8,
+        "p10": 4.6,
+        "p90": 13,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-518558",
+      "name": "J.J. McCarthy",
+      "team": "MIN",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.15,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 234,
+          "p10": 168,
+          "p50": 234,
+          "p90": 300
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.3
+        },
+        "pass_atts": {
+          "mean": 31,
+          "p10": 26.2,
+          "p50": 31,
+          "p90": 35.8
+        },
+        "completions": {
+          "mean": 19.8,
+          "p10": 16.2,
+          "p50": 19.8,
+          "p90": 23.4
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        }
+      },
+      "fantasy": {
+        "mean": 16.9,
+        "p10": 8.8,
+        "p90": 25,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.132
+    },
+    {
+      "player_id": "00-120505",
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0.5,
+        "target_share": 0.12,
+        "route_share": 0.16
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 62,
+          "p10": 36.6,
+          "p50": 62,
+          "p90": 87.4
+        },
+        "rush_atts": {
+          "mean": 13,
+          "p10": 10,
+          "p50": 13,
+          "p90": 16
+        },
+        "rec_yds": {
+          "mean": 24,
+          "p10": 11.7,
+          "p50": 24,
+          "p90": 36.3
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 1.8,
+          "p50": 3.2,
+          "p90": 4.6
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 13.2,
+        "p10": 6.9,
+        "p90": 19.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.396
+    },
+    {
+      "player_id": "00-562297",
+      "name": "Jordan Mason",
+      "team": "MIN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.4,
+        "rush_share": 0.42,
+        "target_share": 0.04,
+        "route_share": 0.08
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "rush_atts": {
+          "mean": 11,
+          "p10": 8.5,
+          "p50": 11,
+          "p90": 13.5
+        },
+        "rec_yds": {
+          "mean": 7,
+          "p10": 3.4,
+          "p50": 7,
+          "p90": 10.6
+        },
+        "receptions": {
+          "mean": 1,
+          "p10": 0.6,
+          "p50": 1,
+          "p90": 1.4
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 8,
+        "p10": 4.2,
+        "p90": 11.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-587010",
+      "name": "Justin Jefferson",
+      "team": "MIN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.9,
+        "rush_share": 0,
+        "target_share": 0.3,
+        "route_share": 0.83
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 92,
+          "p10": 54.3,
+          "p50": 92,
+          "p90": 129.7
+        },
+        "receptions": {
+          "mean": 6.8,
+          "p10": 4.4,
+          "p50": 6.8,
+          "p90": 9.2
+        },
+        "targets": {
+          "mean": 10.2,
+          "p10": 7.3,
+          "p50": 10.2,
+          "p90": 13.1
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 15.7,
+        "p10": 8.2,
+        "p90": 23.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.407
+    },
+    {
+      "player_id": "00-151197",
+      "name": "Jordan Addison",
+      "team": "MIN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0,
+        "target_share": 0.2,
+        "route_share": 0.72
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "receptions": {
+          "mean": 4.4,
+          "p10": 2.8,
+          "p50": 4.4,
+          "p90": 6
+        },
+        "targets": {
+          "mean": 6.8,
+          "p10": 4.9,
+          "p50": 6.8,
+          "p90": 8.7
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 10.2,
+        "p10": 5.3,
+        "p90": 15.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-638136",
+      "name": "Jalen Nailor",
+      "team": "MIN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.45,
+        "rush_share": 0,
+        "target_share": 0.08,
+        "route_share": 0.41
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 26,
+          "p10": 15.3,
+          "p50": 26,
+          "p90": 36.7
+        },
+        "receptions": {
+          "mean": 1.8,
+          "p10": 1.2,
+          "p50": 1.8,
+          "p90": 2.4
+        },
+        "targets": {
+          "mean": 2.8,
+          "p10": 2,
+          "p50": 2.8,
+          "p90": 3.6
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.2,
+        "p10": 2.2,
+        "p90": 6.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-112687",
+      "name": "T.J. Hockenson",
+      "team": "MIN",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.74,
+        "rush_share": 0,
+        "target_share": 0.17,
+        "route_share": 0.68
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 44,
+          "p10": 26,
+          "p50": 44,
+          "p90": 62
+        },
+        "receptions": {
+          "mean": 4.2,
+          "p10": 2.7,
+          "p50": 4.2,
+          "p90": 5.7
+        },
+        "targets": {
+          "mean": 5.8,
+          "p10": 4.2,
+          "p50": 5.8,
+          "p90": 7.4
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.1,
+        "p10": 4.2,
+        "p90": 12,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.26
+    }
+  ],
+  "drivers": [
+    {
+      "id": "doubs_q",
+      "title": "Questionable Packers WR",
+      "detail": "Romeo Doubs is tagged questionable — Packers target tree may concentrate elsewhere."
+    },
+    {
+      "id": "jj",
+      "title": "Jefferson feature",
+      "detail": "Vikings projected pass game still runs through Justin Jefferson."
+    },
+    {
+      "id": "indoor",
+      "title": "U.S. Bank indoor",
+      "detail": "No weather; usage questions matter more than conditions."
+    }
+  ],
+  "confidence": {
+    "label": "low-medium",
+    "score": 0.47,
+    "note": "WR status on Green Bay is the main confidence haircut."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": [
+    {
+      "player_id": "00-0035689",
+      "player_name": "Romeo Doubs",
+      "team": "GB",
+      "pos": "WR",
+      "kind": "downgrade",
+      "status": "questionable",
+      "source": "fixture",
+      "label": "Questionable WR — target volume at risk"
+    }
+  ]
+}
