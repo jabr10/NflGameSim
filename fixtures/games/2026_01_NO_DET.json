@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_NO_DET",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T13:00:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Ford Field",
+    "city": "Detroit",
+    "state": "MI",
+    "indoor": true
+  },
+  "weather": {
+    "temp_f": 72,
+    "wind_mph": 0,
+    "condition": "Indoor — climate controlled",
+    "precip_pct": 0
+  },
+  "teams": {
+    "away": {
+      "abbr": "NO",
+      "name": "New Orleans Saints"
+    },
+    "home": {
+      "abbr": "DET",
+      "name": "Detroit Lions"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.68,
+    "away_win_prob": 0.32,
+    "proj_margin_home": 6.4,
+    "proj_total": 46.1,
+    "margin_p10": -5.1,
+    "margin_p90": 17.9,
+    "total_p10": 36.6,
+    "total_p90": 55.6,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 19.9,
+      "pass_yards": 218,
+      "rush_yards": 98,
+      "pass_attempts": 32,
+      "rush_attempts": 24,
+      "sacks_taken": 2.3,
+      "turnovers": 0.8
+    },
+    "home": {
+      "points": 26.3,
+      "pass_yards": 264,
+      "rush_yards": 129,
+      "pass_attempts": 33,
+      "rush_attempts": 30,
+      "sacks_taken": 2.2,
+      "turnovers": 0.4
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-069309",
+      "name": "Spencer Rattler",
+      "team": "NO",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 0.95,
+        "rush_share": 0.12,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 218,
+          "p10": 156.5,
+          "p50": 218,
+          "p90": 279.5
+        },
+        "pass_tds": {
+          "mean": 1.2,
+          "p10": 0.5,
+          "p50": 1.2,
+          "p90": 1.9
+        },
+        "pass_atts": {
+          "mean": 32,
+          "p10": 27.1,
+          "p50": 32,
+          "p90": 36.9
+        },
+        "completions": {
+          "mean": 19.8,
+          "p10": 16.2,
+          "p50": 19.8,
+          "p90": 23.4
+        },
+        "interceptions": {
+          "mean": 0.8,
+          "p10": 0.2,
+          "p50": 0.8,
+          "p90": 1.3
+        },
+        "rush_yds": {
+          "mean": 16,
+          "p10": 7.8,
+          "p50": 16,
+          "p90": 24.2
+        }
+      },
+      "fantasy": {
+        "mean": 14.2,
+        "p10": 7.4,
+        "p90": 21,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.108
+    },
+    {
+      "player_id": "00-520444",
+      "name": "Alvin Kamara",
+      "team": "NO",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.68,
+        "rush_share": 0.5,
+        "target_share": 0.16,
+        "route_share": 0.2
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 54,
+          "p10": 31.9,
+          "p50": 54,
+          "p90": 76.1
+        },
+        "rush_atts": {
+          "mean": 13,
+          "p10": 10,
+          "p50": 13,
+          "p90": 16
+        },
+        "rec_yds": {
+          "mean": 34,
+          "p10": 16.6,
+          "p50": 34,
+          "p90": 51.4
+        },
+        "receptions": {
+          "mean": 4.4,
+          "p10": 2.4,
+          "p50": 4.4,
+          "p90": 6.4
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 13.9,
+        "p10": 7.2,
+        "p90": 20.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.391
+    },
+    {
+      "player_id": "00-151915",
+      "name": "Kendre Miller",
+      "team": "NO",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.3,
+        "rush_share": 0.27,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "rush_atts": {
+          "mean": 7,
+          "p10": 5.4,
+          "p50": 7,
+          "p90": 8.6
+        },
+        "rec_yds": {
+          "mean": 6,
+          "p10": 2.9,
+          "p50": 6,
+          "p90": 9.1
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5,
+        "p10": 2.6,
+        "p90": 7.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.221
+    },
+    {
+      "player_id": "00-335067",
+      "name": "Chris Olave",
+      "team": "NO",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 74,
+          "p10": 43.7,
+          "p50": 74,
+          "p90": 104.3
+        },
+        "receptions": {
+          "mean": 5.6,
+          "p10": 3.6,
+          "p50": 5.6,
+          "p90": 7.6
+        },
+        "targets": {
+          "mean": 8.6,
+          "p10": 6.2,
+          "p50": 8.6,
+          "p90": 11
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 12.4,
+        "p10": 6.4,
+        "p90": 18.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-394826",
+      "name": "Rashid Shaheed",
+      "team": "NO",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.66,
+        "rush_share": 0,
+        "target_share": 0.15,
+        "route_share": 0.61
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 52,
+          "p10": 30.7,
+          "p50": 52,
+          "p90": 73.3
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 5.2,
+          "p10": 3.7,
+          "p50": 5.2,
+          "p90": 6.7
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.2,
+        "p10": 4.3,
+        "p90": 12.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-649332",
+      "name": "Brandin Cooks",
+      "team": "NO",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.52,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.48
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 31,
+          "p10": 18.3,
+          "p50": 31,
+          "p90": 43.7
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.5,
+          "p50": 2.4,
+          "p90": 3.3
+        },
+        "targets": {
+          "mean": 3.6,
+          "p10": 2.6,
+          "p50": 3.6,
+          "p90": 4.6
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5,
+        "p10": 2.6,
+        "p90": 7.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-864105",
+      "name": "Juwan Johnson",
+      "team": "NO",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 4.8,
+          "p10": 3.4,
+          "p50": 4.8,
+          "p90": 6.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.3,
+        "p10": 3.8,
+        "p90": 10.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-547223",
+      "name": "Jared Goff",
+      "team": "DET",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.04,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 264,
+          "p10": 189.6,
+          "p50": 264,
+          "p90": 338.4
+        },
+        "pass_tds": {
+          "mean": 1.9,
+          "p10": 0.8,
+          "p50": 1.9,
+          "p90": 2.9
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 23.1,
+          "p10": 19,
+          "p50": 23.1,
+          "p90": 27.2
+        },
+        "interceptions": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        },
+        "rush_yds": {
+          "mean": 3,
+          "p10": 1.5,
+          "p50": 3,
+          "p90": 4.5
+        }
+      },
+      "fantasy": {
+        "mean": 17.7,
+        "p10": 9.2,
+        "p90": 26.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.075
+    },
+    {
+      "player_id": "00-477837",
+      "name": "Jahmyr Gibbs",
+      "team": "DET",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.62,
+        "rush_share": 0.58,
+        "target_share": 0.13,
+        "route_share": 0.17
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 78,
+          "p10": 46,
+          "p50": 78,
+          "p90": 110
+        },
+        "rush_atts": {
+          "mean": 15,
+          "p10": 11.5,
+          "p50": 15,
+          "p90": 18.5
+        },
+        "rec_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2,
+          "p50": 3.6,
+          "p90": 5.2
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 16.7,
+        "p10": 8.7,
+        "p90": 24.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.499
+    },
+    {
+      "player_id": "00-982936",
+      "name": "David Montgomery",
+      "team": "DET",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.42,
+        "rush_share": 0.42,
+        "target_share": 0.05,
+        "route_share": 0.09
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "rush_atts": {
+          "mean": 11,
+          "p10": 8.5,
+          "p50": 11,
+          "p90": 13.5
+        },
+        "rec_yds": {
+          "mean": 10,
+          "p10": 4.9,
+          "p50": 10,
+          "p90": 15.1
+        },
+        "receptions": {
+          "mean": 1.4,
+          "p10": 0.8,
+          "p50": 1.4,
+          "p90": 2
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 9.6,
+        "p10": 5,
+        "p90": 14.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.407
+    },
+    {
+      "player_id": "00-534939",
+      "name": "Amon-Ra St. Brown",
+      "team": "DET",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.88,
+        "rush_share": 0,
+        "target_share": 0.3,
+        "route_share": 0.81
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 86,
+          "p10": 50.7,
+          "p50": 86,
+          "p90": 121.3
+        },
+        "receptions": {
+          "mean": 7.6,
+          "p10": 4.9,
+          "p50": 7.6,
+          "p90": 10.3
+        },
+        "targets": {
+          "mean": 10.2,
+          "p10": 7.3,
+          "p50": 10.2,
+          "p90": 13.1
+        },
+        "rec_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 15.7,
+        "p10": 8.2,
+        "p90": 23.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.422
+    },
+    {
+      "player_id": "00-043820",
+      "name": "Jameson Williams",
+      "team": "DET",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.74,
+        "rush_share": 0,
+        "target_share": 0.18,
+        "route_share": 0.68
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 62,
+          "p10": 36.6,
+          "p50": 62,
+          "p90": 87.4
+        },
+        "receptions": {
+          "mean": 3.8,
+          "p10": 2.4,
+          "p50": 3.8,
+          "p90": 5.2
+        },
+        "targets": {
+          "mean": 6.2,
+          "p10": 4.5,
+          "p50": 6.2,
+          "p90": 7.9
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 10.4,
+        "p10": 5.4,
+        "p90": 15.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.332
+    },
+    {
+      "player_id": "00-412670",
+      "name": "Isaac TeSlaa",
+      "team": "DET",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.44,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.4
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.1,
+          "p10": 2.2,
+          "p50": 3.1,
+          "p90": 4
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.5,
+        "p10": 2.3,
+        "p90": 6.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-748367",
+      "name": "Sam LaPorta",
+      "team": "DET",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.19,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 52,
+          "p10": 30.7,
+          "p50": 52,
+          "p90": 73.3
+        },
+        "receptions": {
+          "mean": 4.8,
+          "p10": 3.1,
+          "p50": 4.8,
+          "p90": 6.5
+        },
+        "targets": {
+          "mean": 6.4,
+          "p10": 4.6,
+          "p50": 6.4,
+          "p90": 8.2
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 10.1,
+        "p10": 5.3,
+        "p90": 14.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    }
+  ],
+  "drivers": [
+    {
+      "id": "det_home",
+      "title": "Lions home scoring",
+      "detail": "Gibbs/Montgomery and St. Brown create a stacked projected box."
+    },
+    {
+      "id": "indoor",
+      "title": "Ford Field indoor",
+      "detail": "No weather tax on the passing games."
+    },
+    {
+      "id": "no_qb",
+      "title": "Saints quarterback band",
+      "detail": "Wider Saints pass-volume uncertainty pulls their win probability down."
+    }
+  ],
+  "confidence": {
+    "label": "medium-high",
+    "score": 0.66,
+    "note": "Lions usage is the most stable piece of this slate."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

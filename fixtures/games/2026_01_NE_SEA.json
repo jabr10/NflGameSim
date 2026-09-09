@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_NE_SEA",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-09T20:20:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Lumen Field",
+    "city": "Seattle",
+    "state": "WA",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 67,
+    "wind_mph": 7,
+    "condition": "Partly cloudy",
+    "precip_pct": 15
+  },
+  "teams": {
+    "away": {
+      "abbr": "NE",
+      "name": "New England Patriots"
+    },
+    "home": {
+      "abbr": "SEA",
+      "name": "Seattle Seahawks"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.57,
+    "away_win_prob": 0.43,
+    "proj_margin_home": 2.8,
+    "proj_total": 42.6,
+    "margin_p10": -8.7,
+    "margin_p90": 14.3,
+    "total_p10": 33.1,
+    "total_p90": 52.1,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 19.9,
+      "pass_yards": 248,
+      "rush_yards": 138,
+      "pass_attempts": 33,
+      "rush_attempts": 27,
+      "sacks_taken": 2.3,
+      "turnovers": 0.7
+    },
+    "home": {
+      "points": 22.7,
+      "pass_yards": 236,
+      "rush_yards": 128,
+      "pass_attempts": 31,
+      "rush_attempts": 29,
+      "sacks_taken": 2.3,
+      "turnovers": 0.6
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-167302",
+      "name": "Drake Maye",
+      "team": "NE",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 0.99,
+        "rush_share": 0.19,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 248,
+          "p10": 178.1,
+          "p50": 248,
+          "p90": 317.9
+        },
+        "pass_tds": {
+          "mean": 1.6,
+          "p10": 0.7,
+          "p50": 1.6,
+          "p90": 2.5
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 21.4,
+          "p10": 17.6,
+          "p50": 21.4,
+          "p90": 25.2
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        }
+      },
+      "fantasy": {
+        "mean": 19.2,
+        "p10": 10,
+        "p90": 28.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.165
+    },
+    {
+      "player_id": "00-850424",
+      "name": "Rhamondre Stevenson",
+      "team": "NE",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.62,
+        "rush_share": 0.54,
+        "target_share": 0.12,
+        "route_share": 0.16
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        },
+        "receptions": {
+          "mean": 3.1,
+          "p10": 1.7,
+          "p50": 3.1,
+          "p90": 4.5
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 13.7,
+        "p10": 7.1,
+        "p90": 20.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.412
+    },
+    {
+      "player_id": "00-037873",
+      "name": "TreVeyon Henderson",
+      "team": "NE",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.38,
+        "rush_share": 0.35,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 42,
+          "p10": 24.8,
+          "p50": 42,
+          "p90": 59.2
+        },
+        "rush_atts": {
+          "mean": 9,
+          "p10": 6.9,
+          "p50": 9,
+          "p90": 11.1
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.3,
+          "p50": 2.4,
+          "p90": 3.5
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 9.2,
+        "p10": 4.8,
+        "p90": 13.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.309
+    },
+    {
+      "player_id": "00-781190",
+      "name": "Stefon Diggs",
+      "team": "NE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.78,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.72
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 5.8,
+          "p10": 3.7,
+          "p50": 5.8,
+          "p90": 7.9
+        },
+        "targets": {
+          "mean": 8.4,
+          "p10": 6,
+          "p50": 8.4,
+          "p90": 10.8
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.2,
+        "p10": 6.3,
+        "p90": 18.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    },
+    {
+      "player_id": "00-554831",
+      "name": "Kayshon Boutte",
+      "team": "NE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.71,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.65
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 5.6,
+          "p10": 4,
+          "p50": 5.6,
+          "p90": 7.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.3,
+        "p10": 4.3,
+        "p90": 12.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-063233",
+      "name": "DeMario Douglas",
+      "team": "NE",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0,
+        "target_share": 0.13,
+        "route_share": 0.51
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 32,
+          "p10": 18.9,
+          "p50": 32,
+          "p90": 45.1
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 2.1,
+          "p50": 3.2,
+          "p90": 4.3
+        },
+        "targets": {
+          "mean": 4.5,
+          "p10": 3.2,
+          "p50": 4.5,
+          "p90": 5.8
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5.5,
+        "p10": 2.9,
+        "p90": 8.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-992673",
+      "name": "Hunter Henry",
+      "team": "NE",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.74,
+        "rush_share": 0,
+        "target_share": 0.15,
+        "route_share": 0.68
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 41,
+          "p10": 24.2,
+          "p50": 41,
+          "p90": 57.8
+        },
+        "receptions": {
+          "mean": 3.8,
+          "p10": 2.4,
+          "p50": 3.8,
+          "p90": 5.2
+        },
+        "targets": {
+          "mean": 5.2,
+          "p10": 3.7,
+          "p50": 5.2,
+          "p90": 6.7
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 7.9,
+        "p10": 4.1,
+        "p90": 11.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-419544",
+      "name": "Sam Darnold",
+      "team": "SEA",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.12,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 236,
+          "p10": 169.5,
+          "p50": 236,
+          "p90": 302.5
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.4
+        },
+        "pass_atts": {
+          "mean": 31,
+          "p10": 26.2,
+          "p50": 31,
+          "p90": 35.8
+        },
+        "completions": {
+          "mean": 20.1,
+          "p10": 16.5,
+          "p50": 20.1,
+          "p90": 23.7
+        },
+        "interceptions": {
+          "mean": 0.6,
+          "p10": 0.2,
+          "p50": 0.6,
+          "p90": 1
+        },
+        "rush_yds": {
+          "mean": 12,
+          "p10": 5.8,
+          "p50": 12,
+          "p90": 18.2
+        }
+      },
+      "fantasy": {
+        "mean": 16.2,
+        "p10": 8.4,
+        "p90": 24,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.109
+    },
+    {
+      "player_id": "00-540243",
+      "name": "Kenneth Walker III",
+      "team": "SEA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0.62,
+        "target_share": 0.09,
+        "route_share": 0.13
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 78,
+          "p10": 46,
+          "p50": 78,
+          "p90": 110
+        },
+        "rush_atts": {
+          "mean": 16,
+          "p10": 12.3,
+          "p50": 16,
+          "p90": 19.7
+        },
+        "rec_yds": {
+          "mean": 16,
+          "p10": 7.8,
+          "p50": 16,
+          "p90": 24.2
+        },
+        "receptions": {
+          "mean": 2.2,
+          "p10": 1.2,
+          "p50": 2.2,
+          "p90": 3.2
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 14.2,
+        "p10": 7.4,
+        "p90": 21,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.45
+    },
+    {
+      "player_id": "00-350483",
+      "name": "Zach Charbonnet",
+      "team": "SEA",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.42,
+        "rush_share": 0.35,
+        "target_share": 0.08,
+        "route_share": 0.12
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "rush_atts": {
+          "mean": 9,
+          "p10": 6.9,
+          "p50": 9,
+          "p90": 11.1
+        },
+        "rec_yds": {
+          "mean": 14,
+          "p10": 6.8,
+          "p50": 14,
+          "p90": 21.2
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.1,
+          "p50": 2,
+          "p90": 2.9
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 8.4,
+        "p10": 4.4,
+        "p90": 12.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.326
+    },
+    {
+      "player_id": "00-147212",
+      "name": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.88,
+        "rush_share": 0,
+        "target_share": 0.27,
+        "route_share": 0.81
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "receptions": {
+          "mean": 6.6,
+          "p10": 4.2,
+          "p50": 6.6,
+          "p90": 9
+        },
+        "targets": {
+          "mean": 9.2,
+          "p10": 6.6,
+          "p50": 9.2,
+          "p90": 11.8
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 14.4,
+        "p10": 7.5,
+        "p90": 21.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.386
+    },
+    {
+      "player_id": "00-530781",
+      "name": "Cooper Kupp",
+      "team": "SEA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0,
+        "target_share": 0.19,
+        "route_share": 0.66
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 51,
+          "p10": 30.1,
+          "p50": 51,
+          "p90": 71.9
+        },
+        "receptions": {
+          "mean": 4.4,
+          "p10": 2.8,
+          "p50": 4.4,
+          "p90": 6
+        },
+        "targets": {
+          "mean": 6.4,
+          "p10": 4.6,
+          "p50": 6.4,
+          "p90": 8.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 9,
+        "p10": 4.7,
+        "p90": 13.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-758397",
+      "name": "Tory Horton",
+      "team": "SEA",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 31,
+          "p10": 18.3,
+          "p50": 31,
+          "p90": 43.7
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.5,
+          "p50": 2.4,
+          "p90": 3.3
+        },
+        "targets": {
+          "mean": 3.8,
+          "p10": 2.7,
+          "p50": 3.8,
+          "p90": 4.9
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5.1,
+        "p10": 2.7,
+        "p90": 7.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.18
+    },
+    {
+      "player_id": "00-826160",
+      "name": "AJ Barner",
+      "team": "SEA",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.12,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 32,
+          "p10": 18.9,
+          "p50": 32,
+          "p90": 45.1
+        },
+        "receptions": {
+          "mean": 3.1,
+          "p10": 2,
+          "p50": 3.1,
+          "p90": 4.2
+        },
+        "targets": {
+          "mean": 4.2,
+          "p10": 3,
+          "p50": 4.2,
+          "p90": 5.4
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 6.1,
+        "p10": 3.2,
+        "p90": 9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    }
+  ],
+  "drivers": [
+    {
+      "id": "sea_home",
+      "title": "Home field at Lumen",
+      "detail": "Seattle's home environment and run-game script lift the Seahawks' win probability."
+    },
+    {
+      "id": "ne_qb_rush",
+      "title": "Maye designed keepers",
+      "detail": "Patriot quarterback rushing adds a second-layer scoring path that keeps the projected margin tight."
+    },
+    {
+      "id": "weather",
+      "title": "Mild outdoor night",
+      "detail": "Light wind and no precipitation — passing games should be full-script."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.58,
+    "note": "Stable starter usage; modest weather noise."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_WAS_PHI",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T16:25:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Lincoln Financial Field",
+    "city": "Philadelphia",
+    "state": "PA",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 80,
+    "wind_mph": 10,
+    "condition": "Mostly sunny",
+    "precip_pct": 10
+  },
+  "teams": {
+    "away": {
+      "abbr": "WAS",
+      "name": "Washington Commanders"
+    },
+    "home": {
+      "abbr": "PHI",
+      "name": "Philadelphia Eagles"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.63,
+    "away_win_prob": 0.37,
+    "proj_margin_home": 4.8,
+    "proj_total": 47.2,
+    "margin_p10": -6.7,
+    "margin_p90": 16.3,
+    "total_p10": 37.7,
+    "total_p90": 56.7,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 21.2,
+      "pass_yards": 228,
+      "rush_yards": 140,
+      "pass_attempts": 29,
+      "rush_attempts": 23,
+      "sacks_taken": 2.8,
+      "turnovers": 0.5
+    },
+    "home": {
+      "points": 26,
+      "pass_yards": 226,
+      "rush_yards": 150,
+      "pass_attempts": 29,
+      "rush_attempts": 26,
+      "sacks_taken": 1.8,
+      "turnovers": 0.5
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-981426",
+      "name": "Jayden Daniels",
+      "team": "WAS",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.31,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 228,
+          "p10": 163.7,
+          "p50": 228,
+          "p90": 292.3
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.3
+        },
+        "pass_atts": {
+          "mean": 29,
+          "p10": 24.5,
+          "p50": 29,
+          "p90": 33.5
+        },
+        "completions": {
+          "mean": 19.6,
+          "p10": 16.1,
+          "p50": 19.6,
+          "p90": 23.1
+        },
+        "interceptions": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 0.9
+        },
+        "rush_yds": {
+          "mean": 54,
+          "p10": 26.3,
+          "p50": 54,
+          "p90": 81.7
+        }
+      },
+      "fantasy": {
+        "mean": 22,
+        "p10": 11.4,
+        "p90": 32.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.254
+    },
+    {
+      "player_id": "00-931067",
+      "name": "Brian Robinson Jr.",
+      "team": "WAS",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.52,
+        "rush_share": 0.5,
+        "target_share": 0.06,
+        "route_share": 0.1
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "rush_atts": {
+          "mean": 13,
+          "p10": 10,
+          "p50": 13,
+          "p90": 16
+        },
+        "rec_yds": {
+          "mean": 12,
+          "p10": 5.8,
+          "p50": 12,
+          "p90": 18.2
+        },
+        "receptions": {
+          "mean": 1.6,
+          "p10": 0.9,
+          "p50": 1.6,
+          "p90": 2.3
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 10.6,
+        "p10": 5.5,
+        "p90": 15.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.376
+    },
+    {
+      "player_id": "00-996691",
+      "name": "Austin Ekeler",
+      "team": "WAS",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.42,
+        "rush_share": 0.23,
+        "target_share": 0.13,
+        "route_share": 0.17
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "rush_atts": {
+          "mean": 6,
+          "p10": 4.6,
+          "p50": 6,
+          "p90": 7.4
+        },
+        "rec_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2,
+          "p50": 3.6,
+          "p90": 5.2
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 9.1,
+        "p10": 4.7,
+        "p90": 13.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-940028",
+      "name": "Terry McLaurin",
+      "team": "WAS",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 74,
+          "p10": 43.7,
+          "p50": 74,
+          "p90": 104.3
+        },
+        "receptions": {
+          "mean": 5.4,
+          "p10": 3.5,
+          "p50": 5.4,
+          "p90": 7.3
+        },
+        "targets": {
+          "mean": 8.2,
+          "p10": 5.9,
+          "p50": 8.2,
+          "p90": 10.5
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.6,
+        "p10": 6.6,
+        "p90": 18.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.354
+    },
+    {
+      "player_id": "00-065309",
+      "name": "Deebo Samuel",
+      "team": "WAS",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0,
+        "target_share": 0.18,
+        "route_share": 0.66
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 52,
+          "p10": 30.7,
+          "p50": 52,
+          "p90": 73.3
+        },
+        "receptions": {
+          "mean": 4.2,
+          "p10": 2.7,
+          "p50": 4.2,
+          "p90": 5.7
+        },
+        "targets": {
+          "mean": 6,
+          "p10": 4.3,
+          "p50": 6,
+          "p90": 7.7
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 9,
+        "p10": 4.7,
+        "p90": 13.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-129451",
+      "name": "Noah Brown",
+      "team": "WAS",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 26,
+          "p10": 15.3,
+          "p50": 26,
+          "p90": 36.7
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.1,
+          "p10": 2.2,
+          "p50": 3.1,
+          "p90": 4
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.3,
+        "p10": 2.2,
+        "p90": 6.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-397476",
+      "name": "Zach Ertz",
+      "team": "WAS",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 4.8,
+          "p10": 3.4,
+          "p50": 4.8,
+          "p90": 6.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.1,
+        "p10": 3.7,
+        "p90": 10.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    },
+    {
+      "player_id": "00-584149",
+      "name": "Jalen Hurts",
+      "team": "PHI",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.31,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 226,
+          "p10": 162.3,
+          "p50": 226,
+          "p90": 289.7
+        },
+        "pass_tds": {
+          "mean": 1.5,
+          "p10": 0.6,
+          "p50": 1.5,
+          "p90": 2.4
+        },
+        "pass_atts": {
+          "mean": 29,
+          "p10": 24.5,
+          "p50": 29,
+          "p90": 33.5
+        },
+        "completions": {
+          "mean": 19.4,
+          "p10": 15.9,
+          "p50": 19.4,
+          "p90": 22.9
+        },
+        "interceptions": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        },
+        "rush_yds": {
+          "mean": 44,
+          "p10": 21.4,
+          "p50": 44,
+          "p90": 66.6
+        }
+      },
+      "fantasy": {
+        "mean": 22.2,
+        "p10": 11.5,
+        "p90": 32.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.289
+    },
+    {
+      "player_id": "00-090930",
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.76,
+        "rush_share": 0.69,
+        "target_share": 0.12,
+        "route_share": 0.16
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 92,
+          "p10": 54.3,
+          "p50": 92,
+          "p90": 129.7
+        },
+        "rush_atts": {
+          "mean": 18,
+          "p10": 13.8,
+          "p50": 18,
+          "p90": 22.2
+        },
+        "rec_yds": {
+          "mean": 24,
+          "p10": 11.7,
+          "p50": 24,
+          "p90": 36.3
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 1.8,
+          "p50": 3.2,
+          "p90": 4.6
+        },
+        "rush_tds": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        }
+      },
+      "fantasy": {
+        "mean": 17.9,
+        "p10": 9.3,
+        "p90": 26.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.524
+    },
+    {
+      "player_id": "00-543377",
+      "name": "Will Shipley",
+      "team": "PHI",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.22,
+        "rush_share": 0.15,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 14,
+          "p10": 8.3,
+          "p50": 14,
+          "p90": 19.7
+        },
+        "rush_atts": {
+          "mean": 4,
+          "p10": 3.1,
+          "p50": 4,
+          "p90": 4.9
+        },
+        "rec_yds": {
+          "mean": 6,
+          "p10": 2.9,
+          "p50": 6,
+          "p90": 9.1
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.5
+        }
+      },
+      "fantasy": {
+        "mean": 3,
+        "p10": 1.6,
+        "p90": 4.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.152
+    },
+    {
+      "player_id": "00-538790",
+      "name": "A.J. Brown",
+      "team": "PHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.25,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "receptions": {
+          "mean": 5.6,
+          "p10": 3.6,
+          "p50": 5.6,
+          "p90": 7.6
+        },
+        "targets": {
+          "mean": 8.4,
+          "p10": 6,
+          "p50": 8.4,
+          "p90": 10.8
+        },
+        "rec_tds": {
+          "mean": 0.5,
+          "p10": 0.1,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 14,
+        "p10": 7.3,
+        "p90": 20.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.396
+    },
+    {
+      "player_id": "00-173981",
+      "name": "DeVonta Smith",
+      "team": "PHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.8,
+        "rush_share": 0,
+        "target_share": 0.22,
+        "route_share": 0.74
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 3.3,
+          "p50": 5.2,
+          "p90": 7.1
+        },
+        "targets": {
+          "mean": 7.4,
+          "p10": 5.3,
+          "p50": 7.4,
+          "p90": 9.5
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.7,
+        "p10": 6.1,
+        "p90": 17.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.332
+    },
+    {
+      "player_id": "00-024976",
+      "name": "Jahan Dotson",
+      "team": "PHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.09,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 26,
+          "p10": 15.3,
+          "p50": 26,
+          "p90": 36.7
+        },
+        "receptions": {
+          "mean": 2,
+          "p10": 1.3,
+          "p50": 2,
+          "p90": 2.7
+        },
+        "targets": {
+          "mean": 3.2,
+          "p10": 2.3,
+          "p50": 3.2,
+          "p90": 4.1
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.3,
+        "p10": 2.2,
+        "p90": 6.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-277158",
+      "name": "Dallas Goedert",
+      "team": "PHI",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.76,
+        "rush_share": 0,
+        "target_share": 0.15,
+        "route_share": 0.7
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 42,
+          "p10": 24.8,
+          "p50": 42,
+          "p90": 59.2
+        },
+        "receptions": {
+          "mean": 3.8,
+          "p10": 2.4,
+          "p50": 3.8,
+          "p90": 5.2
+        },
+        "targets": {
+          "mean": 5,
+          "p10": 3.6,
+          "p50": 5,
+          "p90": 6.4
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.8,
+        "p10": 4.1,
+        "p90": 11.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.272
+    }
+  ],
+  "drivers": [
+    {
+      "id": "saquon",
+      "title": "Barkley early downs",
+      "detail": "Eagles projected to control time of possession via the run game."
+    },
+    {
+      "id": "hurts_tush",
+      "title": "Hurts rushing TDs",
+      "detail": "Quarterback goal-line carries are a large slice of PHI scoring."
+    },
+    {
+      "id": "daniels",
+      "title": "Daniels designed runs",
+      "detail": "Washington stays in range through quarterback rushing, not just dropbacks."
+    }
+  ],
+  "confidence": {
+    "label": "medium-high",
+    "score": 0.64,
+    "note": "Eagles usage patterns are well identified."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}

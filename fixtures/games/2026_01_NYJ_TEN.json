@@ -1,0 +1,802 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_NYJ_TEN",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T13:00:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Nissan Stadium",
+    "city": "Nashville",
+    "state": "TN",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 84,
+    "wind_mph": 5,
+    "condition": "Partly cloudy",
+    "precip_pct": 15
+  },
+  "teams": {
+    "away": {
+      "abbr": "NYJ",
+      "name": "New York Jets"
+    },
+    "home": {
+      "abbr": "TEN",
+      "name": "Tennessee Titans"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.47,
+    "away_win_prob": 0.53,
+    "proj_margin_home": -1.1,
+    "proj_total": 40.8,
+    "margin_p10": -12.6,
+    "margin_p90": 10.4,
+    "total_p10": 31.3,
+    "total_p90": 50.3,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 21,
+      "pass_yards": 198,
+      "rush_yards": 158,
+      "pass_attempts": 28,
+      "rush_attempts": 27,
+      "sacks_taken": 2.5,
+      "turnovers": 0.7
+    },
+    "home": {
+      "points": 19.8,
+      "pass_yards": 224,
+      "rush_yards": 122,
+      "pass_attempts": 33,
+      "rush_attempts": 26,
+      "sacks_taken": 2.1,
+      "turnovers": 0.8
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-058969",
+      "name": "Justin Fields",
+      "team": "NYJ",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 0.96,
+        "rush_share": 0.31,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 198,
+          "p10": 142.2,
+          "p50": 198,
+          "p90": 253.8
+        },
+        "pass_tds": {
+          "mean": 1.2,
+          "p10": 0.5,
+          "p50": 1.2,
+          "p90": 1.8
+        },
+        "pass_atts": {
+          "mean": 28,
+          "p10": 23.7,
+          "p50": 28,
+          "p90": 32.3
+        },
+        "completions": {
+          "mean": 17.2,
+          "p10": 14.1,
+          "p50": 17.2,
+          "p90": 20.3
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 48,
+          "p10": 23.4,
+          "p50": 48,
+          "p90": 72.6
+        }
+      },
+      "fantasy": {
+        "mean": 18.4,
+        "p10": 9.6,
+        "p90": 27.2,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.238
+    },
+    {
+      "player_id": "00-0038120",
+      "name": "Breece Hall",
+      "team": "NYJ",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.72,
+        "rush_share": 0.62,
+        "target_share": 0.14,
+        "route_share": 0.18
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 82,
+          "p10": 48.4,
+          "p50": 82,
+          "p90": 115.6
+        },
+        "rush_atts": {
+          "mean": 16,
+          "p10": 12.3,
+          "p50": 16,
+          "p90": 19.7
+        },
+        "rec_yds": {
+          "mean": 28,
+          "p10": 13.6,
+          "p50": 28,
+          "p90": 42.4
+        },
+        "receptions": {
+          "mean": 3.8,
+          "p10": 2.1,
+          "p50": 3.8,
+          "p90": 5.5
+        },
+        "rush_tds": {
+          "mean": 0.6,
+          "p10": 0.1,
+          "p50": 0.6,
+          "p90": 1
+        }
+      },
+      "fantasy": {
+        "mean": 16.9,
+        "p10": 8.8,
+        "p90": 25,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.478
+    },
+    {
+      "player_id": "00-027940",
+      "name": "Braelon Allen",
+      "team": "NYJ",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.32,
+        "rush_share": 0.27,
+        "target_share": 0.03,
+        "route_share": 0.07
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "rush_atts": {
+          "mean": 7,
+          "p10": 5.4,
+          "p50": 7,
+          "p90": 8.6
+        },
+        "rec_yds": {
+          "mean": 6,
+          "p10": 2.9,
+          "p50": 6,
+          "p90": 9.1
+        },
+        "receptions": {
+          "mean": 0.8,
+          "p10": 0.4,
+          "p50": 0.8,
+          "p90": 1.2
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 5.2,
+        "p10": 2.7,
+        "p90": 7.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.247
+    },
+    {
+      "player_id": "00-956980",
+      "name": "Garrett Wilson",
+      "team": "NYJ",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.86,
+        "rush_share": 0,
+        "target_share": 0.27,
+        "route_share": 0.79
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 74,
+          "p10": 43.7,
+          "p50": 74,
+          "p90": 104.3
+        },
+        "receptions": {
+          "mean": 6,
+          "p10": 3.8,
+          "p50": 6,
+          "p90": 8.2
+        },
+        "targets": {
+          "mean": 9.2,
+          "p10": 6.6,
+          "p50": 9.2,
+          "p90": 11.8
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 12.7,
+        "p10": 6.6,
+        "p90": 18.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.332
+    },
+    {
+      "player_id": "00-524699",
+      "name": "Josh Reynolds",
+      "team": "NYJ",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.64,
+        "rush_share": 0,
+        "target_share": 0.13,
+        "route_share": 0.59
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.8,
+          "p50": 2.8,
+          "p90": 3.8
+        },
+        "targets": {
+          "mean": 4.4,
+          "p10": 3.2,
+          "p50": 4.4,
+          "p90": 5.6
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6.3,
+        "p10": 3.3,
+        "p90": 9.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    },
+    {
+      "player_id": "00-627489",
+      "name": "Allen Lazard",
+      "team": "NYJ",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.51
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2.2,
+          "p10": 1.4,
+          "p50": 2.2,
+          "p90": 3
+        },
+        "targets": {
+          "mean": 3.6,
+          "p10": 2.6,
+          "p50": 3.6,
+          "p90": 4.6
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.9,
+        "p10": 2.5,
+        "p90": 7.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.194
+    },
+    {
+      "player_id": "00-471105",
+      "name": "Tyler Conklin",
+      "team": "NYJ",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.68,
+        "rush_share": 0,
+        "target_share": 0.12,
+        "route_share": 0.63
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 3,
+          "p10": 1.9,
+          "p50": 3,
+          "p90": 4.1
+        },
+        "targets": {
+          "mean": 4.2,
+          "p10": 3,
+          "p50": 4.2,
+          "p90": 5.4
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5.3,
+        "p10": 2.8,
+        "p90": 7.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.194
+    },
+    {
+      "player_id": "00-219278",
+      "name": "Cam Ward",
+      "team": "TEN",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.15,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 224,
+          "p10": 160.8,
+          "p50": 224,
+          "p90": 287.2
+        },
+        "pass_tds": {
+          "mean": 1.3,
+          "p10": 0.6,
+          "p50": 1.3,
+          "p90": 2
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 20.4,
+          "p10": 16.7,
+          "p50": 20.4,
+          "p90": 24.1
+        },
+        "interceptions": {
+          "mean": 0.8,
+          "p10": 0.2,
+          "p50": 0.8,
+          "p90": 1.3
+        },
+        "rush_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        }
+      },
+      "fantasy": {
+        "mean": 15.3,
+        "p10": 8,
+        "p90": 22.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.122
+    },
+    {
+      "player_id": "00-0034796",
+      "name": "Tony Pollard",
+      "team": "TEN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.64,
+        "rush_share": 0.58,
+        "target_share": 0.11,
+        "route_share": 0.15
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "rush_atts": {
+          "mean": 15,
+          "p10": 11.5,
+          "p50": 15,
+          "p90": 18.5
+        },
+        "rec_yds": {
+          "mean": 20,
+          "p10": 9.7,
+          "p50": 20,
+          "p90": 30.3
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.5,
+          "p50": 2.8,
+          "p90": 4.1
+        },
+        "rush_tds": {
+          "mean": 0.5,
+          "p10": 0,
+          "p50": 0.5,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 14,
+        "p10": 7.3,
+        "p90": 20.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.427
+    },
+    {
+      "player_id": "00-870476",
+      "name": "Tyjae Spears",
+      "team": "TEN",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.4,
+        "rush_share": 0.27,
+        "target_share": 0.12,
+        "route_share": 0.16
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 32,
+          "p10": 18.9,
+          "p50": 32,
+          "p90": 45.1
+        },
+        "rush_atts": {
+          "mean": 7,
+          "p10": 5.4,
+          "p50": 7,
+          "p90": 8.6
+        },
+        "rec_yds": {
+          "mean": 24,
+          "p10": 11.7,
+          "p50": 24,
+          "p90": 36.3
+        },
+        "receptions": {
+          "mean": 3.2,
+          "p10": 1.8,
+          "p50": 3.2,
+          "p90": 4.6
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 8.8,
+        "p10": 4.6,
+        "p90": 13,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.26
+    },
+    {
+      "player_id": "00-950739",
+      "name": "Calvin Ridley",
+      "team": "TEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.23,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 68,
+          "p10": 40.1,
+          "p50": 68,
+          "p90": 95.9
+        },
+        "receptions": {
+          "mean": 4.8,
+          "p10": 3.1,
+          "p50": 4.8,
+          "p90": 6.5
+        },
+        "targets": {
+          "mean": 7.8,
+          "p10": 5.6,
+          "p50": 7.8,
+          "p90": 10
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.4,
+        "p10": 5.9,
+        "p90": 16.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-428192",
+      "name": "Elic Ayomanor",
+      "team": "TEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 48,
+          "p10": 28.3,
+          "p50": 48,
+          "p90": 67.7
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 5.6,
+          "p10": 4,
+          "p50": 5.6,
+          "p90": 7.2
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.9,
+        "p10": 4.1,
+        "p90": 11.7,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-158203",
+      "name": "Tyler Lockett",
+      "team": "TEN",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.52,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.48
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2.6,
+          "p10": 1.7,
+          "p50": 2.6,
+          "p90": 3.5
+        },
+        "targets": {
+          "mean": 3.8,
+          "p10": 2.7,
+          "p50": 3.8,
+          "p90": 4.9
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 4.8,
+        "p10": 2.5,
+        "p90": 7.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-699664",
+      "name": "Chig Okonkwo",
+      "team": "TEN",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.66,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.61
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 4.6,
+          "p10": 3.3,
+          "p50": 4.6,
+          "p90": 5.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6.5,
+        "p10": 3.4,
+        "p90": 9.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.221
+    }
+  ],
+  "drivers": [
+    {
+      "id": "rb_elevate",
+      "title": "Backfield elevates",
+      "detail": "Film elevates on both starting RBs (Hall, Pollard) raise projected rush attempts."
+    },
+    {
+      "id": "fields",
+      "title": "Fields rushing",
+      "detail": "Jets quarterback scrambles remain a distinct scoring path."
+    },
+    {
+      "id": "pace",
+      "title": "Slower projected pace",
+      "detail": "Both staffs project run-leaning early-down calls, capping the total."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.56,
+    "note": "Run-game film notes increase confidence in RB volume more than pass volume."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": [
+    {
+      "player_id": "00-0034796",
+      "player_name": "Tony Pollard",
+      "team": "TEN",
+      "pos": "RB",
+      "kind": "elevate",
+      "source": "fixture",
+      "label": "Elevate — early-down and two-minute role"
+    },
+    {
+      "player_id": "00-0038120",
+      "player_name": "Breece Hall",
+      "team": "NYJ",
+      "pos": "RB",
+      "kind": "elevate",
+      "source": "fixture",
+      "label": "Elevate — between-the-tackles + screens"
+    }
+  ]
+}

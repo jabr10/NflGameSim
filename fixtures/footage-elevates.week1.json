@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "season": 2026,
+  "week": 1,
+  "source": "fixture",
+  "rows": [
+    {
+      "game_id": "2026_01_NYJ_TEN",
+      "player_id": "00-0034796",
+      "player_name": "Tony Pollard",
+      "team": "TEN",
+      "pos": "RB",
+      "kind": "elevate",
+      "headline": "Explosive backfield usage",
+      "note": "Film elevate: early-down and two-minute role"
+    },
+    {
+      "game_id": "2026_01_NYJ_TEN",
+      "player_id": "00-0038120",
+      "player_name": "Breece Hall",
+      "team": "NYJ",
+      "pos": "RB",
+      "kind": "elevate",
+      "headline": "Between-the-tackles + screen game",
+      "note": "Film elevate: volume RB vs TEN"
+    },
+    {
+      "game_id": "2026_01_GB_MIN",
+      "player_id": "00-0035689",
+      "player_name": "Romeo Doubs",
+      "team": "GB",
+      "pos": "WR",
+      "kind": "downgrade",
+      "status": "questionable",
+      "headline": "Questionable WR — target volume at risk",
+      "note": "Film + status downgrade: limited practice"
+    }
+  ]
+}

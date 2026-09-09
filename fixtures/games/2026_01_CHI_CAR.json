@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.0.0",
+  "game_id": "2026_01_CHI_CAR",
+  "season": 2026,
+  "week": 1,
+  "season_type": "REG",
+  "scoring": "half_ppr",
+  "kickoff": "2026-09-13T13:00:00-04:00",
+  "status": "scheduled",
+  "venue": {
+    "name": "Bank of America Stadium",
+    "city": "Charlotte",
+    "state": "NC",
+    "indoor": false
+  },
+  "weather": {
+    "temp_f": 82,
+    "wind_mph": 6,
+    "condition": "Sunny",
+    "precip_pct": 10
+  },
+  "teams": {
+    "away": {
+      "abbr": "CHI",
+      "name": "Chicago Bears"
+    },
+    "home": {
+      "abbr": "CAR",
+      "name": "Carolina Panthers"
+    }
+  },
+  "market_leans": {
+    "home_win_prob": 0.44,
+    "away_win_prob": 0.56,
+    "proj_margin_home": -1.8,
+    "proj_total": 43.2,
+    "margin_p10": -13.3,
+    "margin_p90": 9.7,
+    "total_p10": 33.7,
+    "total_p90": 52.7,
+    "note": "Model-only projection. No book line attached — type your own line to estimate P(over)."
+  },
+  "team_box": {
+    "away": {
+      "points": 22.5,
+      "pass_yards": 244,
+      "rush_yards": 134,
+      "pass_attempts": 33,
+      "rush_attempts": 27,
+      "sacks_taken": 2.1,
+      "turnovers": 0.7
+    },
+    "home": {
+      "points": 20.7,
+      "pass_yards": 228,
+      "rush_yards": 122,
+      "pass_attempts": 32,
+      "rush_attempts": 26,
+      "sacks_taken": 2.1,
+      "turnovers": 0.7
+    }
+  },
+  "players": [
+    {
+      "player_id": "00-677694",
+      "name": "Caleb Williams",
+      "team": "CHI",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.23,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 244,
+          "p10": 175.2,
+          "p50": 244,
+          "p90": 312.8
+        },
+        "pass_tds": {
+          "mean": 1.6,
+          "p10": 0.7,
+          "p50": 1.6,
+          "p90": 2.4
+        },
+        "pass_atts": {
+          "mean": 33,
+          "p10": 27.9,
+          "p50": 33,
+          "p90": 38.1
+        },
+        "completions": {
+          "mean": 20.6,
+          "p10": 16.9,
+          "p50": 20.6,
+          "p90": 24.3
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 32,
+          "p10": 15.6,
+          "p50": 32,
+          "p90": 48.4
+        }
+      },
+      "fantasy": {
+        "mean": 19,
+        "p10": 9.9,
+        "p90": 28.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.162
+    },
+    {
+      "player_id": "00-677955",
+      "name": "D'Andre Swift",
+      "team": "CHI",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.55,
+        "rush_share": 0.5,
+        "target_share": 0.11,
+        "route_share": 0.15
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 58,
+          "p10": 34.2,
+          "p50": 58,
+          "p90": 81.8
+        },
+        "rush_atts": {
+          "mean": 13,
+          "p10": 10,
+          "p50": 13,
+          "p90": 16
+        },
+        "rec_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.5,
+          "p50": 2.8,
+          "p90": 4.1
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 12.2,
+        "p10": 6.3,
+        "p90": 18.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.376
+    },
+    {
+      "player_id": "00-843614",
+      "name": "Kyle Monangai",
+      "team": "CHI",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.4,
+        "rush_share": 0.38,
+        "target_share": 0.06,
+        "route_share": 0.1
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 44,
+          "p10": 26,
+          "p50": 44,
+          "p90": 62
+        },
+        "rush_atts": {
+          "mean": 10,
+          "p10": 7.7,
+          "p50": 10,
+          "p90": 12.3
+        },
+        "rec_yds": {
+          "mean": 12,
+          "p10": 5.8,
+          "p50": 12,
+          "p90": 18.2
+        },
+        "receptions": {
+          "mean": 1.6,
+          "p10": 0.9,
+          "p50": 1.6,
+          "p90": 2.3
+        },
+        "rush_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 8.3,
+        "p10": 4.3,
+        "p90": 12.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.297
+    },
+    {
+      "player_id": "00-891015",
+      "name": "DJ Moore",
+      "team": "CHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.84,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.77
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 64,
+          "p10": 37.8,
+          "p50": 64,
+          "p90": 90.2
+        },
+        "receptions": {
+          "mean": 5.2,
+          "p10": 3.3,
+          "p50": 5.2,
+          "p90": 7.1
+        },
+        "targets": {
+          "mean": 8,
+          "p10": 5.7,
+          "p50": 8,
+          "p90": 10.3
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.2,
+        "p10": 5.8,
+        "p90": 16.6,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.32
+    },
+    {
+      "player_id": "00-829593",
+      "name": "Rome Odunze",
+      "team": "CHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.8,
+        "rush_share": 0,
+        "target_share": 0.22,
+        "route_share": 0.74
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 66,
+          "p10": 38.9,
+          "p50": 66,
+          "p90": 93.1
+        },
+        "receptions": {
+          "mean": 4.8,
+          "p10": 3.1,
+          "p50": 4.8,
+          "p90": 6.5
+        },
+        "targets": {
+          "mean": 7.4,
+          "p10": 5.3,
+          "p50": 7.4,
+          "p90": 9.5
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 11.4,
+        "p10": 5.9,
+        "p90": 16.9,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.343
+    },
+    {
+      "player_id": "00-988450",
+      "name": "Luther Burden III",
+      "team": "CHI",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.52,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.48
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "receptions": {
+          "mean": 3.1,
+          "p10": 2,
+          "p50": 3.1,
+          "p90": 4.2
+        },
+        "targets": {
+          "mean": 4.6,
+          "p10": 3.3,
+          "p50": 4.6,
+          "p90": 5.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 6.3,
+        "p10": 3.3,
+        "p90": 9.3,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.194
+    },
+    {
+      "player_id": "00-728296",
+      "name": "Colston Loveland",
+      "team": "CHI",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.14,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 38,
+          "p10": 22.4,
+          "p50": 38,
+          "p90": 53.6
+        },
+        "receptions": {
+          "mean": 3.4,
+          "p10": 2.2,
+          "p50": 3.4,
+          "p90": 4.6
+        },
+        "targets": {
+          "mean": 4.8,
+          "p10": 3.4,
+          "p50": 4.8,
+          "p90": 6.2
+        },
+        "rec_tds": {
+          "mean": 0.3,
+          "p10": 0,
+          "p50": 0.3,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.1,
+        "p10": 3.7,
+        "p90": 10.5,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.26
+    },
+    {
+      "player_id": "00-407464",
+      "name": "Bryce Young",
+      "team": "CAR",
+      "pos": "QB",
+      "usage": {
+        "snap_share": 1,
+        "rush_share": 0.15,
+        "target_share": 0,
+        "route_share": 0
+      },
+      "prop_quantiles": {
+        "pass_yds": {
+          "mean": 228,
+          "p10": 163.7,
+          "p50": 228,
+          "p90": 292.3
+        },
+        "pass_tds": {
+          "mean": 1.4,
+          "p10": 0.6,
+          "p50": 1.4,
+          "p90": 2.1
+        },
+        "pass_atts": {
+          "mean": 32,
+          "p10": 27.1,
+          "p50": 32,
+          "p90": 36.9
+        },
+        "completions": {
+          "mean": 20.2,
+          "p10": 16.6,
+          "p50": 20.2,
+          "p90": 23.8
+        },
+        "interceptions": {
+          "mean": 0.7,
+          "p10": 0.2,
+          "p50": 0.7,
+          "p90": 1.2
+        },
+        "rush_yds": {
+          "mean": 22,
+          "p10": 10.7,
+          "p50": 22,
+          "p90": 33.3
+        }
+      },
+      "fantasy": {
+        "mean": 16.3,
+        "p10": 8.5,
+        "p90": 24.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.132
+    },
+    {
+      "player_id": "00-060084",
+      "name": "Chuba Hubbard",
+      "team": "CAR",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.58,
+        "rush_share": 0.54,
+        "target_share": 0.1,
+        "route_share": 0.14
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 64,
+          "p10": 37.8,
+          "p50": 64,
+          "p90": 90.2
+        },
+        "rush_atts": {
+          "mean": 14,
+          "p10": 10.8,
+          "p50": 14,
+          "p90": 17.2
+        },
+        "rec_yds": {
+          "mean": 18,
+          "p10": 8.8,
+          "p50": 18,
+          "p90": 27.2
+        },
+        "receptions": {
+          "mean": 2.6,
+          "p10": 1.4,
+          "p50": 2.6,
+          "p90": 3.8
+        },
+        "rush_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.9
+        }
+      },
+      "fantasy": {
+        "mean": 12.4,
+        "p10": 6.4,
+        "p90": 18.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.386
+    },
+    {
+      "player_id": "00-331831",
+      "name": "Rico Dowdle",
+      "team": "CAR",
+      "pos": "RB",
+      "usage": {
+        "snap_share": 0.38,
+        "rush_share": 0.31,
+        "target_share": 0.07,
+        "route_share": 0.11
+      },
+      "prop_quantiles": {
+        "rush_yds": {
+          "mean": 36,
+          "p10": 21.2,
+          "p50": 36,
+          "p90": 50.8
+        },
+        "rush_atts": {
+          "mean": 8,
+          "p10": 6.2,
+          "p50": 8,
+          "p90": 9.8
+        },
+        "rec_yds": {
+          "mean": 12,
+          "p10": 5.8,
+          "p50": 12,
+          "p90": 18.2
+        },
+        "receptions": {
+          "mean": 1.8,
+          "p10": 1,
+          "p50": 1.8,
+          "p90": 2.6
+        },
+        "rush_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.3,
+        "p10": 3.8,
+        "p90": 10.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.26
+    },
+    {
+      "player_id": "00-030531",
+      "name": "Tetairoa McMillan",
+      "team": "CAR",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.82,
+        "rush_share": 0,
+        "target_share": 0.24,
+        "route_share": 0.75
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 72,
+          "p10": 42.5,
+          "p50": 72,
+          "p90": 101.5
+        },
+        "receptions": {
+          "mean": 5.4,
+          "p10": 3.5,
+          "p50": 5.4,
+          "p90": 7.3
+        },
+        "targets": {
+          "mean": 8.2,
+          "p10": 5.9,
+          "p50": 8.2,
+          "p90": 10.5
+        },
+        "rec_tds": {
+          "mean": 0.4,
+          "p10": 0,
+          "p50": 0.4,
+          "p90": 0.8
+        }
+      },
+      "fantasy": {
+        "mean": 12.2,
+        "p10": 6.3,
+        "p90": 18.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.332
+    },
+    {
+      "player_id": "00-664806",
+      "name": "Xavier Legette",
+      "team": "CAR",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.7,
+        "rush_share": 0,
+        "target_share": 0.16,
+        "route_share": 0.64
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 44,
+          "p10": 26,
+          "p50": 44,
+          "p90": 62
+        },
+        "receptions": {
+          "mean": 3.6,
+          "p10": 2.3,
+          "p50": 3.6,
+          "p90": 4.9
+        },
+        "targets": {
+          "mean": 5.6,
+          "p10": 4,
+          "p50": 5.6,
+          "p90": 7.2
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.7
+        }
+      },
+      "fantasy": {
+        "mean": 7.5,
+        "p10": 3.9,
+        "p90": 11.1,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.234
+    },
+    {
+      "player_id": "00-558903",
+      "name": "Jalen Coker",
+      "team": "CAR",
+      "pos": "WR",
+      "usage": {
+        "snap_share": 0.48,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.44
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 31,
+          "p10": 18.3,
+          "p50": 31,
+          "p90": 43.7
+        },
+        "receptions": {
+          "mean": 2.4,
+          "p10": 1.5,
+          "p50": 2.4,
+          "p90": 3.3
+        },
+        "targets": {
+          "mean": 3.6,
+          "p10": 2.6,
+          "p50": 3.6,
+          "p90": 4.6
+        },
+        "rec_tds": {
+          "mean": 0.1,
+          "p10": 0,
+          "p50": 0.1,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5,
+        "p10": 2.6,
+        "p90": 7.4,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.166
+    },
+    {
+      "player_id": "00-278780",
+      "name": "Ja'Tavion Sanders",
+      "team": "CAR",
+      "pos": "TE",
+      "usage": {
+        "snap_share": 0.66,
+        "rush_share": 0,
+        "target_share": 0.11,
+        "route_share": 0.61
+      },
+      "prop_quantiles": {
+        "rec_yds": {
+          "mean": 28,
+          "p10": 16.5,
+          "p50": 28,
+          "p90": 39.5
+        },
+        "receptions": {
+          "mean": 2.8,
+          "p10": 1.8,
+          "p50": 2.8,
+          "p90": 3.8
+        },
+        "targets": {
+          "mean": 3.8,
+          "p10": 2.7,
+          "p50": 3.8,
+          "p90": 4.9
+        },
+        "rec_tds": {
+          "mean": 0.2,
+          "p10": 0,
+          "p50": 0.2,
+          "p90": 0.6
+        }
+      },
+      "fantasy": {
+        "mean": 5.3,
+        "p10": 2.8,
+        "p90": 7.8,
+        "scoring": "half_ppr"
+      },
+      "anytime_td_prob": 0.208
+    }
+  ],
+  "drivers": [
+    {
+      "id": "chi_young_qb",
+      "title": "Bears explosive pass game",
+      "detail": "Odunze/Moore pairing lifts Chicago's projected scoring even on the road."
+    },
+    {
+      "id": "car_home",
+      "title": "Panthers early-down run",
+      "detail": "Carolina's projected rush attempts keep the game on schedule at home."
+    },
+    {
+      "id": "heat",
+      "title": "Early-season heat",
+      "detail": "Charlotte afternoon warmth is a small rushing-script nudge, not a passing shutdown."
+    }
+  ],
+  "confidence": {
+    "label": "medium",
+    "score": 0.52,
+    "note": "Both offenses still have wide outcome bands."
+  },
+  "copy_rules": {
+    "model_only_outputs": true,
+    "user_typed_lines_only": true,
+    "current_week_only": true,
+    "hide_book_lines": true,
+    "hide_scraped_odds": true
+  },
+  "user_line_hooks": {
+    "spread": true,
+    "total": true,
+    "player_pass_yds": true,
+    "player_rush_yds": true,
+    "player_rec_yds": true,
+    "player_receptions": true,
+    "anytime_td": true
+  },
+  "toggles_applied": [],
+  "footage_refs": []
+}
