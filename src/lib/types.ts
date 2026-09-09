@@ -97,10 +97,14 @@ export type Driver = {
   detail: string;
 };
 
+export type ConfidenceBand = "low" | "medium" | "high";
+
 export type Confidence = {
   label: string;
+  band: ConfidenceBand;
   score: number;
   note: string;
+  reasons: string[];
 };
 
 export type FootageRef = {
