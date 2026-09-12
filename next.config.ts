@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
     "/": ["./fixtures/**/*", "./data/**/*"],
     "/games/[game_id]": ["./fixtures/**/*", "./data/**/*"],
     "/fantasy": ["./fixtures/**/*", "./data/**/*"],
-    "/api/sim": ["./fixtures/**/*", "./data/**/*"],
+    "/api/sim": ["./fixtures/**/*", "./data/**/*", "./engine/**/*"],
   },
 };
 

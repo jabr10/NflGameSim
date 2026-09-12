@@ -28,7 +28,9 @@ export default function WeekBoardPage() {
         <p className="mt-1 text-xs text-slate-500">
           {source === "data"
             ? `Week pack · ${WEEK_PACK_REL}`
-            : `Spo week pack not landed yet · falling back to fixtures/ (elevates still from fixtures)`}
+            : source === "mixed"
+              ? `Week pack slate · ${WEEK_PACK_REL} · GAME_* files pending (cards fall back to fixtures/games)`
+              : `Spo week pack not landed yet · falling back to fixtures/ (elevates still from fixtures)`}
         </p>
       </header>
       <ElevatesStrip rows={elevates.rows} />

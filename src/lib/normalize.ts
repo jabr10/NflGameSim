@@ -113,11 +113,16 @@ function meanKey(field: string): string[] {
 
 function normalizeVenue(raw: unknown): Venue {
   const v = isRecord(raw) ? raw : {};
+  const roof = firstString(v, ["roof"]).toLowerCase();
+  const indoor =
+    typeof v.indoor === "boolean"
+      ? v.indoor
+      : roof === "dome" || roof === "indoor" || roof === "retractable_closed";
   return {
     name: firstString(v, ["name", "stadium", "venue"], "TBD"),
     city: firstString(v, ["city"], ""),
     state: firstString(v, ["state", "region"], ""),
-    indoor: asBoolean(v.indoor, false),
+    indoor,
   };
 }
 
@@ -125,7 +130,7 @@ function normalizeWeather(raw: unknown): Weather {
   const v = isRecord(raw) ? raw : {};
   const temp = firstNumber(v, ["temp_f", "temp", "temperature_f"], Number.NaN);
   const wind = firstNumber(v, ["wind_mph", "wind"], Number.NaN);
-  const precip = firstNumber(v, ["precip_pct", "precip", "rain_pct"], Number.NaN);
+  const precip = firstNumber(v, ["precip_pct", "precip", "precip_prob", "rain_pct"], Number.NaN);
   return {
     temp_f: Number.isFinite(temp) ? temp : null,
     wind_mph: Number.isFinite(wind) ? wind : null,
@@ -229,7 +234,7 @@ function normalizeFootageRef(raw: unknown): FootageRef | null {
   const player_id = firstString(raw, ["player_id", "id"]);
   const player_name = firstString(raw, ["player_name", "name"]);
   if (!player_id && !player_name) return null;
-  const kindRaw = firstString(raw, ["kind", "type"], "elevate").toLowerCase();
+  const kindRaw = firstString(raw, ["kind", "type", "direction"], "elevate").toLowerCase();
   const kind: FootageRef["kind"] = kindRaw.includes("down") ? "downgrade" : "elevate";
   const status = firstString(raw, ["status"]);
   return {
@@ -239,7 +244,7 @@ function normalizeFootageRef(raw: unknown): FootageRef | null {
     pos: firstString(raw, ["pos", "position"]),
     kind,
     source: firstString(raw, ["source"], "fixture"),
-    label: firstString(raw, ["label", "headline", "note"]),
+    label: firstString(raw, ["label", "headline", "note", "why"]),
     ...(status ? { status } : {}),
   };
 }
@@ -485,9 +490,10 @@ function normalizeElevateRow(raw: unknown): ElevateRow | null {
   const player_id = firstString(raw, ["player_id", "id"]);
   const player_name = firstString(raw, ["player_name", "name"]);
   if (!player_id && !player_name) return null;
-  const kindRaw = firstString(raw, ["kind", "type"], "elevate").toLowerCase();
+  const kindRaw = firstString(raw, ["kind", "type", "direction"], "elevate").toLowerCase();
   const kind: ElevateRow["kind"] = kindRaw.includes("down") ? "downgrade" : "elevate";
   const status = firstString(raw, ["status"]);
+  const why = firstString(raw, ["why", "headline", "label", "title"]);
   return {
     game_id: firstString(raw, ["game_id"]),
     player_id: player_id || player_name,
@@ -495,8 +501,8 @@ function normalizeElevateRow(raw: unknown): ElevateRow | null {
     team: firstString(raw, ["team"]),
     pos: firstString(raw, ["pos", "position"]),
     kind,
-    headline: firstString(raw, ["headline", "label", "title"]),
-    note: firstString(raw, ["note", "detail", "body"]),
+    headline: why,
+    note: firstString(raw, ["note", "detail", "body", "why"]),
     ...(status ? { status } : {}),
   };
 }
