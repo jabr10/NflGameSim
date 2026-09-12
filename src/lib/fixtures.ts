@@ -1,13 +1,12 @@
 import { cache } from "react";
 import fs from "node:fs";
 import path from "node:path";
-import { ELEVATES_REL, RATES_REL, WEEK_PACK_REL } from "./constants";
+import { ELEVATES_REL } from "./constants";
 import { normalizeElevates, normalizeSimResult, normalizeSlate } from "./normalize";
-import type { FootageElevates, RateFile, SimResult, Slate } from "./types";
+import type { FootageElevates, SimResult, Slate } from "./types";
 
-const DATA_WEEK_DIR = path.join(process.cwd(), WEEK_PACK_REL);
+const DATA_WEEK_DIR = path.join(process.cwd(), "data", "week", "2026", "w1");
 const FIXTURES_DIR = path.join(process.cwd(), "fixtures");
-const RATES_DIR = path.join(process.cwd(), RATES_REL);
 
 function readJsonFile(full: string): unknown {
   const raw = fs.readFileSync(full, "utf8");
@@ -62,16 +61,4 @@ export function gameExists(gameId: string): boolean {
 export const loadAllGames = cache((): SimResult[] => {
   const slate = loadSlate();
   return slate.games.map((g) => loadGame(g.game_id));
-});
-
-export const loadRates = cache((): RateFile[] => {
-  if (!fs.existsSync(RATES_DIR)) return [];
-  return fs
-    .readdirSync(RATES_DIR)
-    .filter((name) => name.endsWith(".json"))
-    .sort()
-    .map((name) => ({
-      name,
-      data: readJsonFile(path.join(RATES_DIR, name)),
-    }));
 });

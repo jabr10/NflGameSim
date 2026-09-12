@@ -50,7 +50,10 @@ export function GameCard({
           {confidenceLabel ? (
             <span className="rounded-full bg-amber-400/15 px-2 py-0.5 text-[11px] uppercase tracking-wide text-amber-200">
               conf {confidenceLabel}
-              {confidence?.band ? ` · ${confidence.band}` : ""}
+              {confidence?.band &&
+              confidence.band.toLowerCase() !== confidenceLabel.toLowerCase()
+                ? ` · ${confidence.band}`
+                : ""}
             </span>
           ) : null}
         </div>
