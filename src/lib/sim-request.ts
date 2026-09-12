@@ -1,4 +1,4 @@
-import { N_SIMS_CAP, N_SIMS_DEFAULT, SCHEMA_VERSION, SCORING_DEFAULT } from "./constants";
+import { N_SIMS_CAP, N_SIMS_DEFAULT, N_SIMS_MIN, SCHEMA_VERSION, SCORING_DEFAULT } from "./constants";
 import type { InjuryToggle, PlayerToggle, Scoring, SimRequest, UsageToggle } from "./types";
 
 const INJURY: InjuryToggle[] = ["active", "questionable", "out"];
@@ -71,7 +71,7 @@ export function parseSimRequest(
   if (raw.n_sims != null) {
     const n = asInt(raw.n_sims);
     if (n == null) return { ok: false, error: "n_sims must be a number" };
-    if (n < 1) return { ok: false, error: "n_sims must be at least 1" };
+    if (n < N_SIMS_MIN) return { ok: false, error: `n_sims must be at least ${N_SIMS_MIN}` };
     n_sims = Math.min(n, N_SIMS_CAP);
   }
 

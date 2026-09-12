@@ -32,8 +32,9 @@ function dataDir(): string {
 
 export function engineReady(): boolean {
   return (
-    fs.existsSync(path.join(process.cwd(), "engine", "cli_sim.py")) ||
-    fs.existsSync(path.join(process.cwd(), "engine", "api.py"))
+    fs.existsSync(path.join(process.cwd(), "engine", "cli_sim.py")) &&
+    fs.existsSync(path.join(process.cwd(), "engine", "api.py")) &&
+    fs.existsSync(path.join(process.cwd(), "engine", "sim_drive.py"))
   );
 }
 
