@@ -1,1 +1,6 @@
-{"generated_at":"2026-09-09T15:42:26.048089+00:00","team_rows":32,"player_rows":610,"notes":"Rates shrunk toward league/position priors; Week-1 uses prior-season samples when current season stats missing."}
+{
+  "generated_at": "2026-09-09T15:42:26.048089+00:00",
+  "team_rows": 32,
+  "player_rows": 610,
+  "notes": "Rates shrunk toward league/position priors; Week-1 uses prior-season samples when current season stats missing."
+}
