@@ -1,3 +1,5 @@
+import { SCHEMA_VERSION } from "./constants";
+
 export type Scoring = "half_ppr";
 
 export type Quantiles = {
@@ -81,6 +83,8 @@ export type PlayerSim = {
   team: string;
   pos: string;
   usage: Usage;
+  usage_baseline?: Usage;
+  usage_assumption?: string;
   prop_quantiles: Record<string, Quantiles>;
   fantasy: {
     mean: number;
@@ -124,6 +128,26 @@ export type ToggleApplied = {
   usage?: string;
 };
 
+export type UsageAssumption = {
+  id: string;
+  player_id?: string;
+  player_name?: string;
+  team?: string;
+  pos?: string;
+  title: string;
+  detail: string;
+};
+
+export type UsageBaseline = {
+  id: string;
+  player_id?: string;
+  player_name?: string;
+  team?: string;
+  pos?: string;
+  usage: Usage;
+  note: string;
+};
+
 export type SimResult = {
   schema_version: string;
   game_id: string;
@@ -151,6 +175,25 @@ export type SimResult = {
   user_line_hooks: Record<string, boolean>;
   toggles_applied: ToggleApplied[];
   footage_refs: FootageRef[];
+  usage_assumptions: UsageAssumption[];
+  usage_baseline: UsageBaseline[];
+};
+
+export type SimRequest = {
+  schema_version: typeof SCHEMA_VERSION;
+  game_id: string;
+  season: number;
+  week: number;
+  scoring: Scoring;
+  n_sims: number;
+  seed?: number;
+  include_footage_defaults: boolean;
+  toggles: PlayerToggle[];
+};
+
+export type RateFile = {
+  name: string;
+  data: unknown;
 };
 
 export type ElevateRow = {

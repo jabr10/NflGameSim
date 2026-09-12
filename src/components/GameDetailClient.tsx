@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { DriverList, FantasyChips, FootageChips, UsageAssumptionList } from "@/components/GameSurfaces";
 import { TypedLineInput } from "@/components/TypedLineInput";
+import { ENGINE_NOT_WIRED, N_SIMS_DEFAULT, SCHEMA_VERSION, SCORING_DEFAULT } from "@/lib/constants";
 import { formatKickoff, formatNum, formatPct, formatSigned, formatWeather, propLabel } from "@/lib/format";
 import { confidenceBand, normalizeSimResult } from "@/lib/normalize";
 import { marginQuantiles, totalQuantiles } from "@/lib/prob-over";
@@ -24,6 +26,7 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
   const [toggles, setToggles] = useState(() => defaultToggles(initial));
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+  const [noticeKind, setNoticeKind] = useState<"ok" | "engine">("ok");
   const [error, setError] = useState<string | null>(null);
 
   const marginQ = useMemo(() => marginQuantiles(sim.market_leans), [sim.market_leans]);
@@ -40,22 +43,41 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
     setBusy(true);
     setError(null);
     setNotice(null);
+    setNoticeKind("ok");
     try {
       const res = await fetch("/api/sim", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          schema_version: SCHEMA_VERSION,
           game_id: sim.game_id,
+          season: sim.season,
+          week: sim.week,
+          scoring: SCORING_DEFAULT,
+          n_sims: N_SIMS_DEFAULT,
+          include_footage_defaults: true,
           toggles: Object.values(toggles),
         }),
       });
+      const body = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        code?: string;
+      };
+      if (res.status === 503 && body.code === ENGINE_NOT_WIRED) {
+        setNoticeKind("engine");
+        setNotice(
+          body.error ||
+            "In-app engine is not wired yet (ENGINE_NOT_WIRED). Showing the committed week pack.",
+        );
+        return;
+      }
       if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as { error?: string };
         throw new Error(body.error || `Re-sim failed (${res.status})`);
       }
-      const next = normalizeSimResult(await res.json());
+      const next = normalizeSimResult(body as unknown);
       setSim(next);
-      setNotice("Stub sim returned the same fixture. Toggles were sent but not applied.");
+      setNoticeKind("ok");
+      setNotice("Re-sim returned an in-app engine result.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Re-sim failed");
     } finally {
@@ -83,6 +105,9 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
           {sim.venue.indoor ? ", indoor" : ""}) · {formatWeather(sim.weather)}
         </p>
         <p className="text-xs text-slate-500">Status: {sim.status}</p>
+        <div className="pt-2">
+          <FantasyChips players={sim.players} limit={5} />
+        </div>
       </header>
 
       <ConfidenceBandCard confidence={sim.confidence} />
@@ -92,20 +117,45 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
             Footage refs
           </h2>
-          <ul className="mt-3 space-y-2">
-            {(sim.footage_refs ?? []).map((ref) => (
-              <li key={`${ref.player_id}-${ref.kind}`} className="text-sm text-slate-300">
-                <span
-                  className={`mr-2 rounded px-1.5 py-0.5 text-[11px] uppercase ${
-                    ref.kind === "elevate"
-                      ? "bg-emerald-500/15 text-emerald-300"
-                      : "bg-amber-500/15 text-amber-300"
-                  }`}
-                >
-                  {ref.kind}
-                  {ref.status ? ` · ${ref.status}` : ""}
-                </span>
-                {ref.player_name} ({ref.team} {ref.pos}) — {ref.label}
+          <div className="mt-3">
+            <FootageChips refs={sim.footage_refs ?? []} />
+          </div>
+        </section>
+      ) : null}
+
+      {(sim.usage_assumptions ?? []).length > 0 ? (
+        <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            Usage assumptions
+          </h2>
+          <div className="mt-3">
+            <UsageAssumptionList assumptions={sim.usage_assumptions ?? []} />
+          </div>
+        </section>
+      ) : null}
+
+      {(sim.usage_baseline ?? []).length > 0 ? (
+        <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            Usage baseline
+          </h2>
+          <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            {(sim.usage_baseline ?? []).map((row) => (
+              <li key={row.id}>
+                <p className="font-medium text-white">
+                  {row.player_name || row.player_id || row.id}
+                  {row.team || row.pos ? (
+                    <span className="ml-2 text-xs font-normal text-slate-500">
+                      {[row.team, row.pos].filter(Boolean).join(" ")}
+                    </span>
+                  ) : null}
+                </p>
+                <p className="font-mono text-xs text-slate-500">
+                  snap {formatPct(row.usage.snap_share, 0)} · rush {formatPct(row.usage.rush_share, 0)} ·
+                  target {formatPct(row.usage.target_share, 0)} · route{" "}
+                  {formatPct(row.usage.route_share, 0)}
+                </p>
+                {row.note ? <p className="text-slate-400">{row.note}</p> : null}
               </li>
             ))}
           </ul>
@@ -155,7 +205,8 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
               Injury / usage toggles
             </h2>
             <p className="mt-1 text-sm text-slate-500">
-              What-if controls. Re-sim posts them to a stub that returns this fixture.
+              What-if controls. Re-sim posts a sim-request 1.0.0 body (no typed lines). Until M2 the
+              in-app engine returns ENGINE_NOT_WIRED.
             </p>
           </div>
           <button
@@ -167,7 +218,13 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
             {busy ? "Re-simming…" : "Re-sim"}
           </button>
         </div>
-        {notice ? <p className="mt-3 text-sm text-emerald-300">{notice}</p> : null}
+        {notice ? (
+          <p
+            className={`mt-3 text-sm ${noticeKind === "engine" ? "text-amber-300" : "text-emerald-300"}`}
+          >
+            {notice}
+          </p>
+        ) : null}
         {error ? <p className="mt-3 text-sm text-red-400">{error}</p> : null}
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[640px] text-left text-sm">
@@ -233,17 +290,14 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
       <PlayerTable title={`${sim.teams.away.abbr} players`} players={awayPlayers} />
       <PlayerTable title={`${sim.teams.home.abbr} players`} players={homePlayers} />
 
-      <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Drivers</h2>
-        <ul className="mt-3 space-y-3">
-          {sim.drivers.map((d) => (
-            <li key={d.id}>
-              <p className="font-medium text-white">{d.title}</p>
-              <p className="text-sm text-slate-400">{d.detail}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {(sim.drivers ?? []).length > 0 ? (
+        <section className="rounded-xl border border-white/10 bg-[#121a2b] p-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Drivers</h2>
+          <div className="mt-3">
+            <DriverList drivers={sim.drivers} />
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }
@@ -383,6 +437,17 @@ function PlayerTable({
               target share {formatPct(p.usage.target_share, 0)} · route share{" "}
               {formatPct(p.usage.route_share, 0)}
             </p>
+            {p.usage_baseline ? (
+              <p className="text-xs text-slate-600">
+                baseline snap {formatPct(p.usage_baseline.snap_share, 0)} · rush{" "}
+                {formatPct(p.usage_baseline.rush_share, 0)} · target{" "}
+                {formatPct(p.usage_baseline.target_share, 0)} · route{" "}
+                {formatPct(p.usage_baseline.route_share, 0)}
+              </p>
+            ) : null}
+            {p.usage_assumption ? (
+              <p className="mt-1 text-xs text-sky-200/80">{p.usage_assumption}</p>
+            ) : null}
             <p className="mt-2 text-sm text-slate-300">
               Anytime TD{" "}
               <span className="font-mono font-semibold text-white">

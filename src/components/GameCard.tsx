@@ -1,21 +1,31 @@
 import Link from "next/link";
+import { DriverList, FantasyChips, FootageChips, UsageAssumptionList } from "@/components/GameSurfaces";
 import { formatKickoff, formatPct, formatWeather } from "@/lib/format";
 import { teamMeta } from "@/lib/teams";
-import type { SlateGame } from "@/lib/types";
+import type { Confidence, Driver, FootageRef, PlayerSim, SlateGame, UsageAssumption } from "@/lib/types";
 
 export function GameCard({
   game,
   homeWinProb,
   awayWinProb,
-  confidenceLabel,
+  confidence,
+  drivers = [],
+  footage_refs = [],
+  usage_assumptions = [],
+  players = [],
 }: {
   game: SlateGame;
   homeWinProb?: number;
   awayWinProb?: number;
-  confidenceLabel?: string;
+  confidence?: Confidence;
+  drivers?: Driver[];
+  footage_refs?: FootageRef[];
+  usage_assumptions?: UsageAssumption[];
+  players?: PlayerSim[];
 }) {
   const away = teamMeta(game.away);
   const home = teamMeta(game.home);
+  const confidenceLabel = confidence?.label;
 
   return (
     <Link
@@ -40,6 +50,7 @@ export function GameCard({
           {confidenceLabel ? (
             <span className="rounded-full bg-amber-400/15 px-2 py-0.5 text-[11px] uppercase tracking-wide text-amber-200">
               conf {confidenceLabel}
+              {confidence?.band ? ` · ${confidence.band}` : ""}
             </span>
           ) : null}
         </div>
@@ -64,6 +75,34 @@ export function GameCard({
             <div className="bg-slate-400" style={{ width: `${awayWinProb * 100}%` }} />
             <div className="bg-emerald-400" style={{ width: `${homeWinProb * 100}%` }} />
           </div>
+        </div>
+      ) : null}
+      {drivers.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-[11px] uppercase tracking-wide text-slate-500">Drivers</p>
+          <div className="mt-1 text-sm">
+            <DriverList drivers={drivers} limit={2} compact />
+          </div>
+        </div>
+      ) : null}
+      {footage_refs.length > 0 ? (
+        <div className="mt-3">
+          <p className="mb-1 text-[11px] uppercase tracking-wide text-slate-500">Footage</p>
+          <FootageChips refs={footage_refs} limit={3} />
+        </div>
+      ) : null}
+      {usage_assumptions.length > 0 ? (
+        <div className="mt-3">
+          <p className="mb-1 text-[11px] uppercase tracking-wide text-slate-500">Usage</p>
+          <UsageAssumptionList assumptions={usage_assumptions} compact limit={3} />
+        </div>
+      ) : null}
+      {players.length > 0 ? (
+        <div className="mt-3">
+          <p className="mb-1 text-[11px] uppercase tracking-wide text-slate-500">
+            Fantasy mean / p10–p90
+          </p>
+          <FantasyChips players={players} limit={3} />
         </div>
       ) : null}
       <p className="mt-3 text-xs text-emerald-400/80 group-hover:text-emerald-300">
