@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { DriverList, FantasyChips, FootageChips, UsageAssumptionList } from "@/components/GameSurfaces";
 import { TypedLineInput } from "@/components/TypedLineInput";
-import { ENGINE_NOT_WIRED, N_SIMS_DEFAULT, SCHEMA_VERSION, SCORING_DEFAULT } from "@/lib/constants";
+import { N_SIMS_DEFAULT, SCHEMA_VERSION, SCORING_DEFAULT } from "@/lib/constants";
 import { formatKickoff, formatNum, formatPct, formatSigned, formatWeather, propLabel } from "@/lib/format";
 import { confidenceBand, normalizeSimResult } from "@/lib/normalize";
 import { marginQuantiles, totalQuantiles } from "@/lib/prob-over";
@@ -26,7 +26,6 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
   const [toggles, setToggles] = useState(() => defaultToggles(initial));
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
-  const [noticeKind, setNoticeKind] = useState<"ok" | "engine">("ok");
   const [error, setError] = useState<string | null>(null);
 
   const marginQ = useMemo(() => marginQuantiles(sim.market_leans), [sim.market_leans]);
@@ -43,7 +42,6 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
     setBusy(true);
     setError(null);
     setNotice(null);
-    setNoticeKind("ok");
     try {
       const res = await fetch("/api/sim", {
         method: "POST",
@@ -63,20 +61,11 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         error?: string;
         code?: string;
       };
-      if (res.status === 503 && body.code === ENGINE_NOT_WIRED) {
-        setNoticeKind("engine");
-        setNotice(
-          body.error ||
-            "In-app engine is not wired yet (ENGINE_NOT_WIRED). Showing the committed week pack.",
-        );
-        return;
-      }
       if (!res.ok) {
-        throw new Error(body.error || `Re-sim failed (${res.status})`);
+        throw new Error(body.error || body.code || `Re-sim failed (${res.status})`);
       }
       const next = normalizeSimResult(body as unknown);
       setSim(next);
-      setNoticeKind("ok");
       setNotice("Re-sim returned an in-app engine result.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Re-sim failed");
@@ -205,8 +194,8 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
               Injury / usage toggles
             </h2>
             <p className="mt-1 text-sm text-slate-500">
-              What-if controls. Re-sim posts a sim-request 1.0.0 body (no typed lines). Until M2 the
-              in-app engine returns ENGINE_NOT_WIRED.
+              What-if controls. Re-sim posts a sim-request 1.0.0 body (no typed lines) to the in-app
+              engine (`python -m engine.cli_sim`).
             </p>
           </div>
           <button
@@ -220,7 +209,7 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
         </div>
         {notice ? (
           <p
-            className={`mt-3 text-sm ${noticeKind === "engine" ? "text-amber-300" : "text-emerald-300"}`}
+            className="mt-3 text-sm text-emerald-300"
           >
             {notice}
           </p>

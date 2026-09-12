@@ -1,2 +1,3 @@
+# /api/sim serverless runtime only. Do not add nflreadpy or pyarrow here.
 numpy>=1.26
 pandas>=2.2

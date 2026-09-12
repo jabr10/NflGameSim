@@ -1,41 +1,31 @@
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { ENGINE_NOT_WIRED, N_SIMS_CAP } from "./constants";
+import { N_SIMS_CAP, NFL_SIM_DATA_DIR_DEFAULT } from "./constants";
 import { normalizeSimResult } from "./normalize";
 import type { SimRequest, SimResult } from "./types";
-
-export class EngineNotWiredError extends Error {
-  readonly code = ENGINE_NOT_WIRED;
-  constructor(message = "In-app engine is not wired yet. Python run_sim lands in M2.") {
-    super(message);
-    this.name = "EngineNotWiredError";
-  }
-}
 
 export class SimEngineError extends Error {
   readonly code: string;
   readonly status: number;
-  constructor(message: string, code = "SIM_ERROR", status = 400) {
+  constructor(message: string, code = "ENGINE", status = 400) {
     super(message);
     this.name = "SimEngineError";
-    this.code = code;
     this.status = status;
+    this.code = code;
   }
 }
 
 function dataDir(): string {
   const env = process.env.NFL_SIM_DATA_DIR?.trim();
   if (env) return path.isAbsolute(env) ? env : path.join(/*turbopackIgnore: true*/ process.cwd(), env);
-  return path.join(process.cwd(), "data");
+  return path.join(process.cwd(), NFL_SIM_DATA_DIR_DEFAULT);
 }
 
-export function engineReady(): boolean {
-  return (
-    fs.existsSync(path.join(process.cwd(), "engine", "cli_sim.py")) &&
-    fs.existsSync(path.join(process.cwd(), "engine", "api.py")) &&
-    fs.existsSync(path.join(process.cwd(), "engine", "sim_drive.py"))
-  );
+function maxNSims(): string {
+  const env = process.env.NFL_SIM_MAX_N?.trim();
+  if (env && /^\d+$/.test(env)) return String(Math.max(1000, Number(env)));
+  return String(N_SIMS_CAP);
 }
 
 function pythonBin(): string {
@@ -51,7 +41,11 @@ function cliArgs(): string[] {
   if (fs.existsSync(cli)) {
     return [pythonBin(), cli];
   }
-  throw new EngineNotWiredError("In-app engine is not wired yet. Python engine.cli_sim lands in M2.");
+  throw new SimEngineError(
+    "In-app engine CLI missing (engine/cli_sim.py).",
+    "ENGINE",
+    500,
+  );
 }
 
 function parseEngineError(stdout: string, stderr: string): { error: string; code: string; status: number } {
@@ -63,7 +57,7 @@ function parseEngineError(stdout: string, stderr: string): { error: string; code
       if (parsed && (parsed.error || parsed.message || parsed.code)) {
         return {
           error: parsed.error || parsed.message || "Engine error",
-          code: parsed.code || "SIM_ERROR",
+          code: parsed.code || "ENGINE",
           status: typeof parsed.status === "number" ? parsed.status : 400,
         };
       }
@@ -74,7 +68,7 @@ function parseEngineError(stdout: string, stderr: string): { error: string; code
   const detail = (stderr || stdout).trim();
   return {
     error: detail || "Engine process failed",
-    code: "SIM_ERROR",
+    code: "ENGINE",
     status: 500,
   };
 }
@@ -87,6 +81,8 @@ function spawnCli(payload: unknown): Promise<{ code: number | null; stdout: stri
       env: {
         ...process.env,
         NFL_SIM_DATA_DIR: dataDir(),
+        NFL_SIM_MAX_N: maxNSims(),
+        NFL_SIM_DEFAULT_SCORING: "half_ppr",
         PYTHONPATH: [process.cwd(), process.env.PYTHONPATH].filter(Boolean).join(path.delimiter),
       },
     });
@@ -102,8 +98,8 @@ function spawnCli(payload: unknown): Promise<{ code: number | null; stdout: stri
       reject(
         new SimEngineError(
           `Failed to spawn in-app engine (${bin}): ${err.message}`,
-          ENGINE_NOT_WIRED,
-          503,
+          "ENGINE",
+          500,
         ),
       );
     });
@@ -115,22 +111,16 @@ function spawnCli(payload: unknown): Promise<{ code: number | null; stdout: stri
 
 /**
  * In-app only. No ENGINE_BASE / external HTTP.
- * Spawns `python -m engine.cli_sim` (stdin JSON → stdout JSON) when the package exists.
+ * Always spawns `python -m engine.cli_sim` (stdin JSON → stdout JSON).
  */
 export async function runSim(request: SimRequest): Promise<SimResult> {
-  if (!engineReady()) {
-    throw new EngineNotWiredError(
-      "In-app engine is not wired yet. Python run_sim lands in M2.",
-    );
-  }
-
   const payload = {
     schema_version: request.schema_version,
     game_id: request.game_id,
     season: request.season,
     week: request.week,
     scoring: request.scoring,
-    n_sims: Math.min(request.n_sims, N_SIMS_CAP),
+    n_sims: Math.min(Math.max(request.n_sims, 1000), N_SIMS_CAP),
     include_footage_defaults: request.include_footage_defaults,
     toggles: request.toggles,
     ...(request.seed != null ? { seed: request.seed } : {}),
@@ -139,9 +129,6 @@ export async function runSim(request: SimRequest): Promise<SimResult> {
   const { code, stdout, stderr } = await spawnCli(payload);
   if (code !== 0) {
     const err = parseEngineError(stdout, stderr);
-    if (err.code === ENGINE_NOT_WIRED) {
-      throw new EngineNotWiredError(err.error);
-    }
     throw new SimEngineError(err.error, err.code, err.status);
   }
 
@@ -149,7 +136,7 @@ export async function runSim(request: SimRequest): Promise<SimResult> {
   try {
     raw = JSON.parse(stdout);
   } catch {
-    throw new SimEngineError("Engine returned invalid JSON", "SIM_ERROR", 500);
+    throw new SimEngineError("Engine returned invalid JSON", "ENGINE", 500);
   }
   if (raw && typeof raw === "object" && "error" in raw && !("game_id" in raw)) {
     const err = parseEngineError(stdout, "");

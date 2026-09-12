@@ -67,6 +67,6 @@ Normalize helpers tolerate additive Spo fields (`home_team` / `away_team`, strin
 - `/` week board (games + elevates strip + drivers / footage / usage / fantasy chips)
 - `/games/[game_id]` model card, typed lines, injury/usage toggles, Re-sim
 - `/fantasy` players ranked by `fantasy.mean` half_ppr
-- `POST /api/sim` accepts sim-request 1.0.0 (`game_id`, season, week, `scoring` default `half_ppr`, `n_sims` capped at 3000, `seed`, `include_footage_defaults`, `toggles[]`). No typed lines in the body. In-app only — no `ENGINE_BASE`. Sets `NFL_SIM_DATA_DIR` to repo `data/` and spawns `python -m engine.cli_sim` when `engine/` is present. `SimAPIError` maps to `{ "error", "code" }`. Until the Python package lands, returns **503** `{ "error": "...", "code": "ENGINE_NOT_WIRED" }`.
+- `POST /api/sim` accepts sim-request 1.0.0 (`game_id`, season, week, `scoring` default `half_ppr`, `n_sims` **≥ 1000** and capped at **3000**, `seed`, `include_footage_defaults`, `toggles[]`). No typed lines in the body. In-app only — no `ENGINE_BASE`. Sets `NFL_SIM_DATA_DIR` to repo `data/` (`week/` + `rates/`) and always spawns `python -m engine.cli_sim`. `SimAPIError` maps to `{ "error", "code" }`. Runtime Python deps for the sim route are **numpy + pandas only** (`engine/requirements.runtime.txt`). Do not install `nflreadpy` / pyarrow on the function; ingest stays offline.
 
 Typed lines stay client-side: mean/p10/p50/p90 for approx P(over). Anytime TD uses `anytime_td_prob`.
