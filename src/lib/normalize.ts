@@ -16,6 +16,8 @@ import type {
   TeamInfo,
   ToggleApplied,
   Usage,
+  UsageAssumption,
+  UsageBaseline,
   Venue,
   Weather,
 } from "./types";
@@ -111,11 +113,16 @@ function meanKey(field: string): string[] {
 
 function normalizeVenue(raw: unknown): Venue {
   const v = isRecord(raw) ? raw : {};
+  const roof = firstString(v, ["roof"]).toLowerCase();
+  const indoor =
+    typeof v.indoor === "boolean"
+      ? v.indoor
+      : roof === "dome" || roof === "indoor" || roof === "retractable_closed";
   return {
     name: firstString(v, ["name", "stadium", "venue"], "TBD"),
     city: firstString(v, ["city"], ""),
     state: firstString(v, ["state", "region"], ""),
-    indoor: asBoolean(v.indoor, false),
+    indoor,
   };
 }
 
@@ -123,7 +130,7 @@ function normalizeWeather(raw: unknown): Weather {
   const v = isRecord(raw) ? raw : {};
   const temp = firstNumber(v, ["temp_f", "temp", "temperature_f"], Number.NaN);
   const wind = firstNumber(v, ["wind_mph", "wind"], Number.NaN);
-  const precip = firstNumber(v, ["precip_pct", "precip", "rain_pct"], Number.NaN);
+  const precip = firstNumber(v, ["precip_pct", "precip", "precip_prob", "rain_pct"], Number.NaN);
   return {
     temp_f: Number.isFinite(temp) ? temp : null,
     wind_mph: Number.isFinite(wind) ? wind : null,
@@ -227,7 +234,7 @@ function normalizeFootageRef(raw: unknown): FootageRef | null {
   const player_id = firstString(raw, ["player_id", "id"]);
   const player_name = firstString(raw, ["player_name", "name"]);
   if (!player_id && !player_name) return null;
-  const kindRaw = firstString(raw, ["kind", "type"], "elevate").toLowerCase();
+  const kindRaw = firstString(raw, ["kind", "type", "direction"], "elevate").toLowerCase();
   const kind: FootageRef["kind"] = kindRaw.includes("down") ? "downgrade" : "elevate";
   const status = firstString(raw, ["status"]);
   return {
@@ -237,7 +244,7 @@ function normalizeFootageRef(raw: unknown): FootageRef | null {
     pos: firstString(raw, ["pos", "position"]),
     kind,
     source: firstString(raw, ["source"], "fixture"),
-    label: firstString(raw, ["label", "headline", "note"]),
+    label: firstString(raw, ["label", "headline", "note", "why"]),
     ...(status ? { status } : {}),
   };
 }
@@ -257,12 +264,16 @@ function normalizePlayer(raw: unknown): PlayerSim | null {
   }
   const fantasyRaw = isRecord(raw.fantasy) ? raw.fantasy : {};
   const scoring = (firstString(fantasyRaw, ["scoring"], "half_ppr") || "half_ppr") as Scoring;
+  const assumption = firstString(raw, ["usage_assumption", "assumption_note"]);
+  const baselineRaw = firstDefined(raw, ["usage_baseline", "baseline_usage"]);
   return {
     player_id: player_id || name,
     name: name || player_id,
     team: firstString(raw, ["team"]),
     pos: firstString(raw, ["pos", "position"]),
     usage: normalizeUsage(raw.usage),
+    ...(isRecord(baselineRaw) ? { usage_baseline: normalizeUsage(baselineRaw) } : {}),
+    ...(assumption ? { usage_assumption: assumption } : {}),
     prop_quantiles,
     fantasy: {
       mean: firstNumber(fantasyRaw, ["mean", "pts", "points"], firstNumber(raw, ["fantasy_mean"])),
@@ -293,6 +304,94 @@ function boolMap(raw: unknown): Record<string, boolean> {
     if (typeof v === "boolean") out[k] = v;
   }
   return out;
+}
+
+function normalizeCopyRules(raw: unknown): Record<string, boolean> {
+  const out = boolMap(raw);
+  if (!isRecord(raw)) return out;
+  if (raw.no_lock === true) out.no_lock = true;
+  if (raw.no_plus_ev === true) out.no_plus_ev = true;
+  if (raw.no_scraped_odds === true) {
+    out.no_scraped_odds = true;
+    out.hide_scraped_odds = true;
+  }
+  return out;
+}
+
+export function normalizeUsageAssumption(raw: unknown, index: number): UsageAssumption | null {
+  if (typeof raw === "string" && raw.trim()) {
+    return { id: `usage_${index}`, title: raw.trim(), detail: "" };
+  }
+  if (!isRecord(raw)) return null;
+  const title = firstString(raw, ["title", "name", "headline", "assumption", "label"]);
+  const detail = firstString(raw, ["detail", "note", "text", "body", "assumption"]);
+  const player_id = firstString(raw, ["player_id", "id"]);
+  const player_name = firstString(raw, ["player_name", "name"]);
+  if (!title && !detail && !player_id && !player_name) return null;
+  return {
+    id: firstString(raw, ["id", "key"], player_id || `usage_${index}`),
+    ...(player_id ? { player_id } : {}),
+    ...(player_name ? { player_name } : {}),
+    ...(firstString(raw, ["team"]) ? { team: firstString(raw, ["team"]) } : {}),
+    ...(firstString(raw, ["pos", "position"])
+      ? { pos: firstString(raw, ["pos", "position"]) }
+      : {}),
+    title: title || player_name || player_id || `Usage ${index + 1}`,
+    detail: detail === title ? "" : detail,
+  };
+}
+
+export function normalizeUsageAssumptions(raw: unknown): UsageAssumption[] {
+  if (raw == null) return [];
+  if (Array.isArray(raw)) {
+    return raw.map(normalizeUsageAssumption).filter((x): x is UsageAssumption => x != null);
+  }
+  if (!isRecord(raw)) return [];
+  return Object.entries(raw)
+    .map(([key, value], index) => {
+      if (typeof value === "string") {
+        return normalizeUsageAssumption({ id: key, title: key, detail: value }, index);
+      }
+      if (isRecord(value)) {
+        return normalizeUsageAssumption({ id: key, ...value }, index);
+      }
+      return null;
+    })
+    .filter((x): x is UsageAssumption => x != null);
+}
+
+export function normalizeUsageBaseline(raw: unknown, index: number, key = ""): UsageBaseline | null {
+  if (!isRecord(raw)) return null;
+  const player_id = firstString(raw, ["player_id", "id"], key);
+  const player_name = firstString(raw, ["player_name", "name"]);
+  const usageRaw = isRecord(raw.usage) ? raw.usage : raw;
+  const usage = normalizeUsage(usageRaw);
+  const note = firstString(raw, ["note", "detail", "text", "body"]);
+  if (!player_id && !player_name && !note && Object.values(usage).every((n) => n === 0)) {
+    return null;
+  }
+  return {
+    id: firstString(raw, ["id", "key"], player_id || `baseline_${index}`),
+    ...(player_id ? { player_id } : {}),
+    ...(player_name ? { player_name } : {}),
+    ...(firstString(raw, ["team"]) ? { team: firstString(raw, ["team"]) } : {}),
+    ...(firstString(raw, ["pos", "position"])
+      ? { pos: firstString(raw, ["pos", "position"]) }
+      : {}),
+    usage,
+    note,
+  };
+}
+
+export function normalizeUsageBaselines(raw: unknown): UsageBaseline[] {
+  if (raw == null) return [];
+  if (Array.isArray(raw)) {
+    return raw.map((row, i) => normalizeUsageBaseline(row, i)).filter((x): x is UsageBaseline => x != null);
+  }
+  if (!isRecord(raw)) return [];
+  return Object.entries(raw)
+    .map(([key, value], index) => normalizeUsageBaseline(isRecord(value) ? value : {}, index, key))
+    .filter((x): x is UsageBaseline => x != null);
 }
 
 function normalizeMarketLeans(raw: unknown, home: TeamInfo, away: TeamInfo) {
@@ -355,6 +454,8 @@ export function normalizeSimResult(raw: unknown): SimResult {
   const driversRaw = Array.isArray(g.drivers) ? g.drivers : [];
   const refsRaw = Array.isArray(g.footage_refs) ? g.footage_refs : [];
   const togglesRaw = Array.isArray(g.toggles_applied) ? g.toggles_applied : [];
+  const assumptionsRaw = firstDefined(g, ["usage_assumptions", "assumptions"]);
+  const baselineRaw = firstDefined(g, ["usage_baseline", "usage_baselines"]);
   return {
     schema_version: firstString(g, ["schema_version", "schema"], "1.0.0"),
     game_id: requireString(g, ["game_id", "id"], "game_id"),
@@ -375,10 +476,12 @@ export function normalizeSimResult(raw: unknown): SimResult {
     players: playersRaw.map(normalizePlayer).filter((p): p is PlayerSim => p != null),
     drivers: driversRaw.map(normalizeDriver),
     confidence: normalizeConfidence(g),
-    copy_rules: boolMap(g.copy_rules),
+    copy_rules: normalizeCopyRules(g.copy_rules),
     user_line_hooks: boolMap(g.user_line_hooks),
     toggles_applied: togglesRaw.map(normalizeToggle).filter((t): t is ToggleApplied => t != null),
     footage_refs: refsRaw.map(normalizeFootageRef).filter((r): r is FootageRef => r != null),
+    usage_assumptions: normalizeUsageAssumptions(assumptionsRaw),
+    usage_baseline: normalizeUsageBaselines(baselineRaw),
   };
 }
 
@@ -387,9 +490,10 @@ function normalizeElevateRow(raw: unknown): ElevateRow | null {
   const player_id = firstString(raw, ["player_id", "id"]);
   const player_name = firstString(raw, ["player_name", "name"]);
   if (!player_id && !player_name) return null;
-  const kindRaw = firstString(raw, ["kind", "type"], "elevate").toLowerCase();
+  const kindRaw = firstString(raw, ["kind", "type", "direction"], "elevate").toLowerCase();
   const kind: ElevateRow["kind"] = kindRaw.includes("down") ? "downgrade" : "elevate";
   const status = firstString(raw, ["status"]);
+  const why = firstString(raw, ["why", "headline", "label", "title"]);
   return {
     game_id: firstString(raw, ["game_id"]),
     player_id: player_id || player_name,
@@ -397,8 +501,8 @@ function normalizeElevateRow(raw: unknown): ElevateRow | null {
     team: firstString(raw, ["team"]),
     pos: firstString(raw, ["pos", "position"]),
     kind,
-    headline: firstString(raw, ["headline", "label", "title"]),
-    note: firstString(raw, ["note", "detail", "body"]),
+    headline: why,
+    note: firstString(raw, ["note", "detail", "body", "why"]),
     ...(status ? { status } : {}),
   };
 }

@@ -18,10 +18,10 @@ if (!process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL) {
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/": ["./fixtures/**/*"],
-    "/games/[game_id]": ["./fixtures/**/*"],
-    "/fantasy": ["./fixtures/**/*"],
-    "/api/sim": ["./fixtures/**/*"],
+    "/": ["./fixtures/**/*", "./data/**/*"],
+    "/games/[game_id]": ["./fixtures/**/*", "./data/**/*"],
+    "/fantasy": ["./fixtures/**/*", "./data/**/*"],
+    "/api/sim": ["./fixtures/**/*", "./data/**/*", "./engine/**/*"],
   },
 };
 
