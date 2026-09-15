@@ -5,7 +5,7 @@ import { DriverList, FantasyChips, FootageChips, UsageAssumptionList } from "@/c
 import { TypedLineInput } from "@/components/TypedLineInput";
 import { N_SIMS_DEFAULT, SCHEMA_VERSION, SCORING_DEFAULT } from "@/lib/constants";
 import { formatKickoff, formatNum, formatPct, formatSigned, formatWeather, propLabel } from "@/lib/format";
-import { confidenceBand, normalizeSimResult } from "@/lib/normalize";
+import { confidenceBand, mergeScheduleFrom, normalizeSimResult } from "@/lib/normalize";
 import { marginQuantiles, totalQuantiles } from "@/lib/prob-over";
 import type { Confidence, InjuryToggle, PlayerToggle, SimResult, UsageToggle } from "@/lib/types";
 
@@ -64,7 +64,7 @@ export function GameDetailClient({ initial }: { initial: SimResult }) {
       if (!res.ok) {
         throw new Error(body.error || body.code || `Re-sim failed (${res.status})`);
       }
-      const next = normalizeSimResult(body as unknown);
+      const next = mergeScheduleFrom(normalizeSimResult(body as unknown), sim);
       setSim(next);
       setNotice("Re-sim returned an in-app engine result.");
     } catch (err) {

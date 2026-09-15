@@ -2,7 +2,9 @@ import { DISPLAY_TIMEZONE } from "./constants";
 import type { Weather } from "./types";
 
 export function formatKickoff(iso: string, timeZone = DISPLAY_TIMEZONE): string {
+  if (!iso) return "Kickoff TBD";
   const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "Kickoff TBD";
   return new Intl.DateTimeFormat("en-US", {
     timeZone,
     weekday: "short",

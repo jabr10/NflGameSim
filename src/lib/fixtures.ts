@@ -2,7 +2,7 @@ import { cache } from "react";
 import fs from "node:fs";
 import path from "node:path";
 import { ELEVATES_REL } from "./constants";
-import { normalizeElevates, normalizeSimResult, normalizeSlate } from "./normalize";
+import { mergeScheduleFrom, normalizeElevates, normalizeSimResult, normalizeSlate } from "./normalize";
 import type { FootageElevates, SimResult, Slate } from "./types";
 
 function dataRoot(): string {
@@ -76,13 +76,19 @@ export const loadElevates = cache((): FootageElevates => {
   return attachElevateGameIds(elevates, loadSlate());
 });
 
+function applySlateContext(sim: SimResult): SimResult {
+  const row = loadSlate().games.find((g) => g.game_id === sim.game_id);
+  if (!row) return sim;
+  return mergeScheduleFrom(sim, row);
+}
+
 export const loadGame = cache((gameId: string): SimResult => {
   if (!/^[\w-]+$/.test(gameId)) {
     throw new Error("Invalid game_id");
   }
   const full = resolveGamePath(gameId);
   if (!full) throw new Error(`Unknown game_id: ${gameId}`);
-  return normalizeSimResult(readJsonFile(full));
+  return applySlateContext(normalizeSimResult(readJsonFile(full)));
 });
 
 export function gameExists(gameId: string): boolean {
@@ -92,5 +98,14 @@ export function gameExists(gameId: string): boolean {
 
 export const loadAllGames = cache((): SimResult[] => {
   const slate = loadSlate();
-  return slate.games.filter((g) => gameExists(g.game_id)).map((g) => loadGame(g.game_id));
+  const games: SimResult[] = [];
+  for (const g of slate.games) {
+    if (!gameExists(g.game_id)) continue;
+    try {
+      games.push(loadGame(g.game_id));
+    } catch (err) {
+      console.error(`[fixtures] skipped ${g.game_id}`, err);
+    }
+  }
+  return games;
 });

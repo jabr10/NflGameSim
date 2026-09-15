@@ -66,6 +66,32 @@ function requireString(raw: Record<string, unknown>, keys: string[], label: stri
   return v;
 }
 
+/** Spo GAME_* packs omit kickoff; slate uses `kickoff`. Never throw — empty string renders as TBD. */
+const KICKOFF_KEYS = [
+  "kickoff",
+  "start",
+  "kickoff_et",
+  "kickoff_time",
+  "start_time",
+  "scheduled_at",
+  "game_time",
+  "kickoff_iso",
+  "kickoff_utc",
+];
+
+function kickoffFrom(obj: Record<string, unknown>): string {
+  const direct = firstString(obj, KICKOFF_KEYS);
+  if (direct) return direct;
+  for (const k of KICKOFF_KEYS) {
+    const nested = obj[k];
+    if (isRecord(nested)) {
+      const inner = firstString(nested, ["iso", "utc", "datetime", "kickoff", "start", "value"]);
+      if (inner) return inner;
+    }
+  }
+  return "";
+}
+
 function asStringList(v: unknown): string[] {
   if (!Array.isArray(v)) return [];
   return v.filter((x): x is string => typeof x === "string" && x.length > 0);
@@ -221,6 +247,9 @@ function normalizeConfidence(raw: Record<string, unknown>): Confidence {
 }
 
 function normalizeDriver(raw: unknown, index: number): Driver {
+  if (typeof raw === "string" && raw.trim()) {
+    return { id: `driver_${index}`, title: raw.trim(), detail: "" };
+  }
   const v = isRecord(raw) ? raw : {};
   return {
     id: firstString(v, ["id", "key"], `driver_${index}`),
@@ -281,7 +310,11 @@ function normalizePlayer(raw: unknown): PlayerSim | null {
       p90: firstNumber(fantasyRaw, ["p90"], firstNumber(raw, ["fantasy_p90"])),
       scoring,
     },
-    anytime_td_prob: firstNumber(raw, ["anytime_td_prob", "atd_prob", "anytime_td"]),
+    anytime_td_prob: firstNumber(
+      raw,
+      ["anytime_td_prob", "atd_prob", "anytime_td"],
+      isRecord(raw.usage) ? firstNumber(raw.usage, ["anytime_td_prob", "atd_prob"]) : 0,
+    ),
   };
 }
 
@@ -421,7 +454,7 @@ export function normalizeSlateGame(raw: unknown): SlateGame {
     game_id: requireString(g, ["game_id", "id"], "game_id"),
     away: pickTeamAbbr(g, "away"),
     home: pickTeamAbbr(g, "home"),
-    kickoff: requireString(g, ["kickoff", "start", "kickoff_et"], "kickoff"),
+    kickoff: kickoffFrom(g),
     status: firstString(g, ["status"], "scheduled"),
     venue: normalizeVenue(g.venue),
     weather: normalizeWeather(g.weather),
@@ -441,7 +474,14 @@ export function normalizeSlate(raw: unknown): Slate {
     season_type: "REG",
     scoring_default: (firstString(s, ["scoring_default", "scoring"], "half_ppr") || "half_ppr") as Scoring,
     timezone: firstString(s, ["timezone", "tz"], "America/New_York"),
-    games: gamesRaw.map(normalizeSlateGame),
+    games: gamesRaw.flatMap((raw) => {
+      try {
+        return [normalizeSlateGame(raw)];
+      } catch (err) {
+        console.error("[normalize] skipped slate game", err);
+        return [];
+      }
+    }),
   };
 }
 
@@ -463,7 +503,8 @@ export function normalizeSimResult(raw: unknown): SimResult {
     week: asNumber(g.week),
     season_type: "REG",
     scoring: (firstString(g, ["scoring"], "half_ppr") || "half_ppr") as Scoring,
-    kickoff: requireString(g, ["kickoff", "start", "kickoff_et"], "kickoff"),
+    // Spo GAME_* packs omit kickoff/status/venue/weather; those live on slate.json.
+    kickoff: kickoffFrom(g),
     status: firstString(g, ["status"], "scheduled"),
     venue: normalizeVenue(g.venue),
     weather: normalizeWeather(g.weather),
@@ -482,6 +523,24 @@ export function normalizeSimResult(raw: unknown): SimResult {
     footage_refs: refsRaw.map(normalizeFootageRef).filter((r): r is FootageRef => r != null),
     usage_assumptions: normalizeUsageAssumptions(assumptionsRaw),
     usage_baseline: normalizeUsageBaselines(baselineRaw),
+  };
+}
+
+/** Fill kickoff/venue/weather/status from slate (or a previous sim) when Spo GAME_* omit them. */
+export function mergeScheduleFrom(sim: SimResult, from: SimResult | {
+  kickoff: string;
+  status: string;
+  venue: SimResult["venue"];
+  weather: SimResult["weather"];
+}): SimResult {
+  const venueMissing = !sim.venue.name || sim.venue.name === "TBD";
+  const weatherMissing = !sim.weather.condition || sim.weather.condition === "Unknown";
+  return {
+    ...sim,
+    kickoff: sim.kickoff || from.kickoff,
+    status: from.status || sim.status,
+    venue: venueMissing ? from.venue : sim.venue,
+    weather: weatherMissing ? from.weather : sim.weather,
   };
 }
 
