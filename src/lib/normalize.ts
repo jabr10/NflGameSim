@@ -221,6 +221,9 @@ function normalizeConfidence(raw: Record<string, unknown>): Confidence {
 }
 
 function normalizeDriver(raw: unknown, index: number): Driver {
+  if (typeof raw === "string" && raw.trim()) {
+    return { id: `driver_${index}`, title: raw.trim(), detail: "" };
+  }
   const v = isRecord(raw) ? raw : {};
   return {
     id: firstString(v, ["id", "key"], `driver_${index}`),
@@ -281,7 +284,11 @@ function normalizePlayer(raw: unknown): PlayerSim | null {
       p90: firstNumber(fantasyRaw, ["p90"], firstNumber(raw, ["fantasy_p90"])),
       scoring,
     },
-    anytime_td_prob: firstNumber(raw, ["anytime_td_prob", "atd_prob", "anytime_td"]),
+    anytime_td_prob: firstNumber(
+      raw,
+      ["anytime_td_prob", "atd_prob", "anytime_td"],
+      isRecord(raw.usage) ? firstNumber(raw.usage, ["anytime_td_prob", "atd_prob"]) : 0,
+    ),
   };
 }
 
@@ -463,7 +470,8 @@ export function normalizeSimResult(raw: unknown): SimResult {
     week: asNumber(g.week),
     season_type: "REG",
     scoring: (firstString(g, ["scoring"], "half_ppr") || "half_ppr") as Scoring,
-    kickoff: requireString(g, ["kickoff", "start", "kickoff_et"], "kickoff"),
+    // Spo GAME_* packs omit kickoff/status/venue/weather; those live on slate.json.
+    kickoff: firstString(g, ["kickoff", "start", "kickoff_et"]),
     status: firstString(g, ["status"], "scheduled"),
     venue: normalizeVenue(g.venue),
     weather: normalizeWeather(g.weather),
@@ -482,6 +490,24 @@ export function normalizeSimResult(raw: unknown): SimResult {
     footage_refs: refsRaw.map(normalizeFootageRef).filter((r): r is FootageRef => r != null),
     usage_assumptions: normalizeUsageAssumptions(assumptionsRaw),
     usage_baseline: normalizeUsageBaselines(baselineRaw),
+  };
+}
+
+/** Fill kickoff/venue/weather/status from slate (or a previous sim) when Spo GAME_* omit them. */
+export function mergeScheduleFrom(sim: SimResult, from: SimResult | {
+  kickoff: string;
+  status: string;
+  venue: SimResult["venue"];
+  weather: SimResult["weather"];
+}): SimResult {
+  const venueMissing = !sim.venue.name || sim.venue.name === "TBD";
+  const weatherMissing = !sim.weather.condition || sim.weather.condition === "Unknown";
+  return {
+    ...sim,
+    kickoff: sim.kickoff || from.kickoff,
+    status: from.status || sim.status,
+    venue: venueMissing ? from.venue : sim.venue,
+    weather: weatherMissing ? from.weather : sim.weather,
   };
 }
 
